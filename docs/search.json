@@ -1,16 +1,65 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Shunkei Kakimoto",
+    "section": "",
+    "text": "Hello"
+  },
+  {
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "",
+    "section": "",
+    "text": "Application for R Review Course, Ph.D. (UMN, summer 2024)"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
     "section": "",
     "text": "About this site"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Shunkei3.github.io",
+    "objectID": "CV.html",
+    "href": "CV.html",
+    "title": "CV",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "About this site"
+  },
+  {
+    "objectID": "teaching.html#graduate",
+    "href": "teaching.html#graduate",
+    "title": "Teaching",
+    "section": "Graduate",
+    "text": "Graduate\n{} Fall 2023 - Present \\ APEC 8211 (U Econometric Analysis I, Ph.D.) \\ APEC 8212 (Econometric Analysis II, Ph.D.) \\ APEC 8003 (Applied Microeconomic Analysis of Game Theory and Information, Ph.D.) \\ APEC 8004 (Applied Microeconomic Analysis of Social Choice and Welfare, Ph.D.)"
+  },
+  {
+    "objectID": "teaching.html#graduate-1",
+    "href": "teaching.html#graduate-1",
+    "title": "Teaching",
+    "section": "Graduate",
+    "text": "Graduate\n{} Fall 2023 - Present \\ APEC 8211 Econometric Analysis I, Ph.D. \\ APEC 8212 Econometric Analysis II, Ph.D. \\ APEC 8003 Applied Microeconomic Analysis of Game Theory and Information, Ph.D.) \\ APEC 8004 (Applied Microeconomic Analysis of Social Choice and Welfare, Ph.D.)"
+  },
+  {
+    "objectID": "teaching.html#workshops",
+    "href": "teaching.html#workshops",
+    "title": "",
+    "section": "Workshops",
+    "text": "Workshops\n\nIntroduction to Making Presentation Slides with xaringan\n\nApplied Economics Student Workshop Series at the University of Minnesota, April 30th, 2024"
+  },
+  {
+    "objectID": "teaching.html#teaching-instuctor",
+    "href": "teaching.html#teaching-instuctor",
+    "title": "",
+    "section": "",
+    "text": "Application for R Review Course, Ph.D. (UMN, summer 2024)"
+  },
+  {
+    "objectID": "teaching.html#teaching-assistant",
+    "href": "teaching.html#teaching-assistant",
+    "title": "",
+    "section": "Teaching Assistant",
+    "text": "Teaching Assistant\n\nAPEC 8004 (Applied Microeconomic Analysis of Social Choice and Welfare, Ph.D. (UMN, Spring 2024)\nAPEC 8003 Applied Microeconomic Analysis of Game Theory and Information, Ph.D. (UMN, Spring 2024)\nAPEC 8211 Econometric Analysis I, Ph.D. (UMN, Fall 2023)\nAPEC 8212 Econometric Analysis II, Ph.D. (UMN, Fall 2023)\nAECN 896-003 Applied Econometrics, M.S. (University of Nebraska-Lincoln, Fall 2020, Spring 2022)"
   }
 ]

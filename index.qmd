@@ -1,7 +1,17 @@
 ---
-title: "Shunkei3.github.io"
+title: "Shunkei Kakimoto"
+image: assets/image/IMG_0733.png
+page-layout: full
+toc: false
+about: 
+    template: trestles
+    image-shape: round
+    image-width: 20em
+    links:
+      - icon: envelope
+        href: mailto:kakim002@umn.edu
+      - icon: github
+        href: https://github.com/Shunkei3
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+# Hello

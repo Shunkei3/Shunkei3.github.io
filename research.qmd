@@ -1,0 +1,12 @@
+---
+title: "Research"
+toc: false
+bibliography: ./assets/bib/Exported Items.bib
+engine: knitr
+execute: 
+  echo: false
+---
+
+
+
+

@@ -3,18 +3,21 @@ project:
   output-dir: docs
 
 website:
-  title: "Shunkei3.github.io"
   navbar:
     left:
       - href: index.qmd
-        text: Home
-      - about.qmd
+        text: "About"
+      - href: teaching.qmd
+        text: "Teaching"
+      - research.qmd
+      - CV.qmd
+    right:
+      - icon: github
+        href: https://github.com/Shunkei3
 
 format:
   html:
-    theme: cosmo
-    css: css/styles.css
+    theme: Litera
+    css: assets/css/styles.css
     toc: true
-
-
 
