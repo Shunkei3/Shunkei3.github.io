@@ -1,12 +1,50 @@
 ---
 title: "Research"
 toc: false
-bibliography: ./assets/bib/Exported Items.bib
+bibliography: assets/bib/Exported Items.bib
 engine: knitr
 execute: 
   echo: false
 ---
 
+```{r setup-bib, include=FALSE, cache = FALSE}
+#/*--------------------------------*/
+#' ## # For citation
+#/*--------------------------------*/
+library(here)
+library(RefManageR)
 
+BibOptions(
+  check.entries = FALSE,
+  bib.style = "authoryear",
+  style = "markdown",
+  sorting = "ynt", 
+  hyperlink = FALSE,
+  dashed = TRUE,
+  max.names = 10,
+  longnamesfirst = FALSE
+)
+# bib <- ReadBib("../../GitControlled/Writing/ref.bib")
+bib <- ReadBib("assets/bib/Exported Items.bib")
+# for example,
+# `r Citet(bib, "deschenes2007economic")`
+```
 
+<br>
 
+## Current projects
+
+- Measurement Error Issues in Gridded Weather Data
+
+<br>
+
+## Publications
+
+```{r, echo=FALSE, results="asis"}
+print(
+    bib,
+    .opts = list(
+        no.print.fields = c("urldate", "url"),
+        sorting = "ynt"
+    ))
+```

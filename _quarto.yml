@@ -17,7 +17,7 @@ website:
 
 format:
   html:
-    theme: Litera
-    css: assets/css/styles.css
+    theme: assets/css/theme.scss
+    mainfont: Roboto
     toc: true
 

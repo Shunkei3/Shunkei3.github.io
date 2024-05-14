@@ -6,12 +6,58 @@ toc: false
 about: 
     template: trestles
     image-shape: round
-    image-width: 20em
+    image-width: 30em
     links:
-      - icon: envelope
-        href: mailto:kakim002@umn.edu
-      - icon: github
-        href: https://github.com/Shunkei3
+        - text: "{{< fa envelope size=2xl >}}"
+          href: mailto:kakim002@umn.edu
+        - text: "{{< fa brands github size=2xl >}}"
+          href: https://github.com/Shunkei3
+engine: knitr
 ---
 
-# Hello
+
+```{css}
+/*| echo: false */
+
+.about-entity {
+  padding-top: 100px;
+}
+
+.about-link {
+  color: #2D5986 !important;
+  padding: 10px !important;
+  border: 0 !important;
+  border-radius: 5px !important;
+  background-color: transparent !important;
+}
+
+/* when hovering on icons */
+.about-link:hover {
+  background-color: #717171 !important;
+}
+
+
+h1 {
+  line-height: 1.1;
+  margin-bottom: 4px;
+  font-size: 2em;
+  color: #515151 !important;
+}
+
+h3 {
+  color: #5F6A72;
+  margin-bottom: 8px;
+  margin-top: 0px;
+}
+
+h4 {
+  color: #cc0033;
+  text-transform: none;
+  font-size: 18px;
+  margin-top: 0px;
+}
+```
+
+# Bio
+
+I am a third-year PhD student in the Department of Applied Economics at the University of Minnesota. 

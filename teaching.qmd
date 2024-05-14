@@ -1,6 +1,8 @@
 ---
-title: ""
+title: "Teaching"
 ---
+
+<br>
 
 ## Teaching Instuctor
 
@@ -10,12 +12,14 @@ title: ""
 
 ## Teaching Assistant
 
-- APEC 8004 (Applied Microeconomic Analysis of Social Choice and Welfare, Ph.D. (UMN, Spring 2024)
-- APEC 8003 Applied Microeconomic Analysis of Game Theory and Information, Ph.D. (UMN, Spring 2024)
-- APEC 8211 Econometric Analysis I, Ph.D. (UMN, Fall 2023)
-- APEC 8212 Econometric Analysis II, Ph.D. (UMN, Fall 2023)
+### University of Minnesota
+- APEC 8004 Applied Microeconomic Analysis of Social Choice and Welfare, Ph.D. (Spring 2024)
+- APEC 8003 Applied Microeconomic Analysis of Game Theory and Information, Ph.D. (Spring 2024)
+- APEC 8211 Econometric Analysis I, Ph.D. (Fall 2023)
+- APEC 8212 Econometric Analysis II, Ph.D. (Fall 2023)
 
-- AECN 896-003 Applied Econometrics, M.S. (University of Nebraska-Lincoln, Fall 2020, Spring 2022)
+### University of Nebraska-Lincoln
+- AECN 896-003 Applied Econometrics, M.S. (Fall 2020, Spring 2022)
 
 <br>
 

@@ -1,65 +1,51 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Shunkei Kakimoto",
-    "section": "",
-    "text": "Hello"
-  },
-  {
-    "objectID": "teaching.html",
-    "href": "teaching.html",
-    "title": "",
-    "section": "",
-    "text": "Application for R Review Course, Ph.D. (UMN, summer 2024)"
-  },
-  {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
-    "section": "",
-    "text": "About this site"
-  },
-  {
     "objectID": "CV.html",
     "href": "CV.html",
-    "title": "CV",
+    "title": "Curriculum vitæ",
     "section": "",
-    "text": "About this site"
+    "text": "Download current CV"
   },
   {
-    "objectID": "teaching.html#graduate",
-    "href": "teaching.html#graduate",
-    "title": "Teaching",
-    "section": "Graduate",
-    "text": "Graduate\n{} Fall 2023 - Present \\ APEC 8211 (U Econometric Analysis I, Ph.D.) \\ APEC 8212 (Econometric Analysis II, Ph.D.) \\ APEC 8003 (Applied Microeconomic Analysis of Game Theory and Information, Ph.D.) \\ APEC 8004 (Applied Microeconomic Analysis of Social Choice and Welfare, Ph.D.)"
+    "objectID": "research.html#current-projects",
+    "href": "research.html#current-projects",
+    "title": "Research",
+    "section": "Current projects",
+    "text": "Current projects\n\nMeasurement Error Issues in Gridded Weather Data"
   },
   {
-    "objectID": "teaching.html#graduate-1",
-    "href": "teaching.html#graduate-1",
-    "title": "Teaching",
-    "section": "Graduate",
-    "text": "Graduate\n{} Fall 2023 - Present \\ APEC 8211 Econometric Analysis I, Ph.D. \\ APEC 8212 Econometric Analysis II, Ph.D. \\ APEC 8003 Applied Microeconomic Analysis of Game Theory and Information, Ph.D.) \\ APEC 8004 (Applied Microeconomic Analysis of Social Choice and Welfare, Ph.D.)"
-  },
-  {
-    "objectID": "teaching.html#workshops",
-    "href": "teaching.html#workshops",
-    "title": "",
-    "section": "Workshops",
-    "text": "Workshops\n\nIntroduction to Making Presentation Slides with xaringan\n\nApplied Economics Student Workshop Series at the University of Minnesota, April 30th, 2024"
+    "objectID": "research.html#publications",
+    "href": "research.html#publications",
+    "title": "Research",
+    "section": "Publications",
+    "text": "Publications\nKakimoto, S., T. Mieno, T. S. Tanaka, and D. S. Bullock (2022). “Causal forest approach for site-specific input management via on-farm precision experimentation”. In: Computers and Electronics in Agriculture 199, p. 107164. ISSN: 01681699. DOI: 10.1016/j.compag.2022.107164.\nMieno, T., T. Foster, S. Kakimoto, and N. Brozović (2024). “Aquifer depletion exacerbates agricultural drought losses in the US High Plains”. In: Nature Water 2.1. Publisher: Nature Publishing Group, pp. 41-51. ISSN: 2731-6084. DOI: 10.1038/s44221-023-00173-7."
   },
   {
     "objectID": "teaching.html#teaching-instuctor",
     "href": "teaching.html#teaching-instuctor",
-    "title": "",
-    "section": "",
-    "text": "Application for R Review Course, Ph.D. (UMN, summer 2024)"
+    "title": "Teaching",
+    "section": "Teaching Instuctor",
+    "text": "Teaching Instuctor\n\nApplication for R Review Course, Ph.D. (UMN, summer 2024)"
   },
   {
     "objectID": "teaching.html#teaching-assistant",
     "href": "teaching.html#teaching-assistant",
-    "title": "",
+    "title": "Teaching",
     "section": "Teaching Assistant",
-    "text": "Teaching Assistant\n\nAPEC 8004 (Applied Microeconomic Analysis of Social Choice and Welfare, Ph.D. (UMN, Spring 2024)\nAPEC 8003 Applied Microeconomic Analysis of Game Theory and Information, Ph.D. (UMN, Spring 2024)\nAPEC 8211 Econometric Analysis I, Ph.D. (UMN, Fall 2023)\nAPEC 8212 Econometric Analysis II, Ph.D. (UMN, Fall 2023)\nAECN 896-003 Applied Econometrics, M.S. (University of Nebraska-Lincoln, Fall 2020, Spring 2022)"
+    "text": "Teaching Assistant\n\nUniversity of Minnesota\n\nAPEC 8004 Applied Microeconomic Analysis of Social Choice and Welfare, Ph.D. (Spring 2024)\nAPEC 8003 Applied Microeconomic Analysis of Game Theory and Information, Ph.D. (Spring 2024)\nAPEC 8211 Econometric Analysis I, Ph.D. (Fall 2023)\nAPEC 8212 Econometric Analysis II, Ph.D. (Fall 2023)\n\n\n\nUniversity of Nebraska-Lincoln\n\nAECN 896-003 Applied Econometrics, M.S. (Fall 2020, Spring 2022)"
+  },
+  {
+    "objectID": "teaching.html#workshops",
+    "href": "teaching.html#workshops",
+    "title": "Teaching",
+    "section": "Workshops",
+    "text": "Workshops\n\nIntroduction to Making Presentation Slides with xaringan\n\nApplied Economics Student Workshop Series at the University of Minnesota, April 30th, 2024"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Shunkei Kakimoto",
+    "section": "",
+    "text": "Bio\nI am a third-year PhD student in the Department of Applied Economics at the University of Minnesota."
   }
 ]
