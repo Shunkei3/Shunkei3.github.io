@@ -12,6 +12,8 @@ about:
           href: mailto:kakim002@umn.edu
         - text: "{{< fa brands github size=2xl >}}"
           href: https://github.com/Shunkei3
+        - text: "{{< ai orcid size=2xl >}}"
+          href: https://orcid.org/0000-0003-3279-6405
 engine: knitr
 ---
 
@@ -58,6 +60,53 @@ h4 {
 }
 ```
 
+
+```{r}
+#| label: printing-fuctions
+#| echo: false
+
+wrap_li <- function(text = "text", fa = "fas fa-graduation-cap") {
+  li <- paste0("<li><i class='fa-li ", fa, "'></i>", text, "</li>\n")
+  return(li)
+}
+
+print_list <- function(text = "text", fa = "fas fa-graduation-cap") {
+  open_ul  <- "<ul class='ul-edu fa-ul'>"
+  close_ul <- "</ul>"
+  items    <- wrap_li(text, fa)
+
+  cat(paste0(open_ul, "\n"), items, paste0("\n", close_ul))
+}
+
+```
+
 # Bio
 
-I am a third-year PhD student in the Department of Applied Economics at the University of Minnesota. 
+I am a third-year PhD student in the Department of Applied Economics at the University of Minnesota. Previously, I worked as a graduate research assistant at the Daugherty Water for Food Global Institute at the University of Nebraska and conducted research to understand the impacts of groundwater conservation policy on groundwater use in Nebraska. I am eager to address potential and on-going environmental and resource issues that people have not yet seen because of extensive economical development. I want to look at reciprocal interactions between the environment and economical development through incorporating findings of various fields and using state- of-the-art economic methods to derive useful insights for sustainable development.
+
+<!-- I am interested in conducting applied economic research with the goal of deepening our understanding of the economic system - environment interactions for better environment and resource management policymaking. -->
+
+<br>
+
+##### Interests
+- Environmental economics
+- Natural resource economics
+- Water economics
+- Agricultural economics
+
+<br>
+
+##### Education
+
+```{r}
+#| label: print-ed
+#| echo: false
+#| results: 'asis'
+print_list(
+  text = c(
+    "Ph.D., Applied Economics, University of Minnesota, Present",
+    "M.S., Agricultural Economics, University of Nebraska-Lincoln, 2022", 
+    "B.S., Agricultural Economics, Hokkaido University, Japan, 2019"
+    )
+  )
+```
