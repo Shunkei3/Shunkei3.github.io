@@ -17,7 +17,7 @@ website:
       - href: index.qmd
         text: "About"
       - href: research.qmd
-        text: "Researches/Talks"
+        text: "Research & Talks"
       - href: teaching.qmd
         text: "Teaching"
       - href: CV.qmd
