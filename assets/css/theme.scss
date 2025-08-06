@@ -4,6 +4,8 @@
 // $font-family-sans-serif: "Maven Pro", "Yanone Kaffeesatz" !default;
 // $font-family-monospace: "Fira Mono" !default;
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
 // Colors
 // $dark-green: #858E79;
 // $light-green: #D1D9CE;
@@ -11,23 +13,56 @@
 // $gray: #64605f;
 // $purple: #9158A2;
 // $orange: #ad7237;
+$light-blue: #6699CC;
+$bright-blue: #0d6efd;
+$light-maroon: #DD5746;
 
+$dark-green: #1B540D;
+$light-green: #628C66;
+$lightest-green: #79AD7F;
+$grey: #5F6A72;
 $my-font-size: 25px;
 
 h1 {
-    color: #6699CC !important;
+    font-size: 36px;
+    color: $dark-green !important;
+    font-family: 'DM Serif Display',serif;
   }
+
+h2 {
+  font-size: 28px;
+  color: $grey !important;
+  font-family: 'DM Serif Display',serif;
+}
+
+h3 {
+  font-size: 24px;
+  color: $grey !important;
+  font-family: 'DM Serif Display',serif;
+}
+
+h4 {
+  font-size: 20px;
+  color: $light-maroon !important;
+  font-family: 'DM Serif Display',serif;
+}
 
 // Base document colors
 $navbar-bg: #FFFF; // navbar
 // $navbar-fg: $dark-green; // navbar foreground elements
-$navbar-hl: #21618C; // highlight color when hovering over navbar links
+$navbar-hl: $dark-green; // highlight color when hovering over navbar links
 $body-bg: #FFFF; // page background 
+// $body-bg: #FFFFF4;
 $body-color: #313131; // page text 
 // $footer-bg: $cream; // footer 
-$link-color: #75AADB; // hyperlinks 
-$link-color-hover:#2874A6;
+$link-color: $light-green; // hyperlinks 
+$link-color-hover:$dark-green;
 
 // Inline code
 // $code-bg: $cream; // inline code background color
 // $code-color: $purple; // inline code text color
+
+/* Change font family in Quarto navbar */
+.navbar, .navbar-brand, .navbar-nav, .navbar-nav a.nav-link {
+  font-family: 'Roboto',serif;
+}

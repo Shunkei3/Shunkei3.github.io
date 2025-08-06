@@ -1,6 +1,6 @@
 ---
-title: "Research"
-toc: false
+title: ""
+toc: true
 bibliography: assets/bib/Exported Items.bib
 engine: knitr
 execute: 
@@ -28,23 +28,88 @@ BibOptions(
 bib <- ReadBib("assets/bib/Exported Items.bib")
 # for example,
 # `r Citet(bib, "deschenes2007economic")`
+
+# --- Extract year field safely ---
+years <- sapply(bib, function(entry) {
+  # Try year field
+  if (!is.null(entry$year) && length(entry$year) > 0) {
+    return(suppressWarnings(as.numeric(entry$year[[1]])))
+  }
+
+  # Try date field
+  if (!is.null(entry$date) && length(entry$date) > 0) {
+    date_str <- entry$date[[1]]
+    year_str <- regmatches(date_str, regexpr("[0-9]{4}", date_str))
+    return(suppressWarnings(as.numeric(year_str)))
+  }
+
+  # Fallback
+  return(NA_real_)
+})
+
+# --- Extract author for tie-breaking sort ---
+authors <- sapply(bib, function(entry) {
+  if (!is.null(entry$author)) paste(entry$author, collapse = " ") else ""
+})
+
+
 ```
 
+
+# {{< fa folder-open >}} Current Research Projects
+
+***Kakimoto, S.** "Heterogeneous Effects of the Adoption of Modern Irrigation Technology - Empirical Evidence and Economic Theory"*
+
++ I am interested in agricultural irrigation and the behavioral mechanisms underlying farmers' decisions to adopt water-saving technologies or conservation practices. While advanced irrigation technologies have the potential to reduce water consumption without compromising agricultural productivity or farmer welfare, their adoption can sometimes lead to unintended consequences — including increased total water use and accelerated resource depletion. This project builds on a theoretical framework to empirically examine the heterogeneous effects of modern irrigation technology adoption on farmers’ water use and productivity. It also explores the behavioral mechanisms that drive these outcomes.
+
+*Gallagher, N. and **Kakimoto, S.** "Yield Response to Nitrogen in Agricultural Production Models"*
+
++ This project proposes a new modeling framework for agricultural production in Minnesota. The innovation lies in incorporating nitrogen yield response directly into the land allocation model. This approach enables more realistic adjustments in both nitrogen application rates and land use decisions in response to changes in nitrogen fertilizer prices and crop prices — a critical feature for evaluating alternative policy strategies aimed at reducing nitrogen pollution in the state.
+
+***Kakimoto, S.** and Mieno, T. "Size and the Nature of Measurement Error in Gridded Weather Datasets and its Consequential Estimation Bias in Regression Model: an Application to PRISM Datasets for the US Midwest Regions"*
+
++ Gridded weather datasets, such as PRISM, have been widely used in econometric analysis to study the impact of weather on economic outcomes. Yet, concerns persist regarding the measurement errors in these datasets and their consequential estimation bias. This study systematically quantifies and characterizes the measurement errors in growing-season total precipitation and extreme degree days (EDD) derived from PRISM. Using exact spatial matches between PRISM grid cells and ground weather stations, we find that PRISM weather variables exhibit nontrivial measurement errors that are negatively correlated with true weather outcomes, especially for EDD. Moreover, the variance of these errors increases with the extremity of actual weather outcomes. We conduct Monte Carlo simulations to evaluate the resulting estimation bias in weather impact on farm-level corn yields. The simulation results show that the average bias is moderate when estimating weather impacts on corn yield across the entire Corn Belt region due to large weather variations. However, the bias becomes more substantial at smaller spatial scales, such as individual states, where limited variation amplifies the relative influence of measurement error. We conclude that researchers should exercise caution when using PRISM data in econometric models, especially in subregional analyses. 
+
 <br>
 
-## Current projects
-
-- Measurement Error Issues in Gridded Weather Data
-
-<br>
-
-## Publications
+<!-- # {{< fa file-alt >}} Publications -->
+# {{< fa book >}} Publications
 
 ```{r, echo=FALSE, results="asis"}
-print(
-    bib,
-    .opts = list(
-        no.print.fields = c("urldate", "url"),
-        sorting = "ynt"
-    ))
+# print(
+#     bib,
+#     .opts = list(
+#         no.print.fields = c("urldate", "url")
+#         # sorting = "ynt"
+#     ))
+  
+# Order from newest to oldest
+idx <- order(-years)
+
+# Print entries manually in markdown format
+for (i in idx) {
+  entry_md <- capture.output(print(bib[[i]], .opts = list(style = "markdown", no.print.fields = c("url", "urldate"))))
+  cat(paste(entry_md, collapse = "\n"), "\n\n")
+}
+
 ```
+
+<br>
+
+# {{< fa person-chalkboard >}} Presentations
+
+"Size and the Nature of Measurement Error in Gridded Weather Datasets and its Consequential Estimation Bias in Regression Model: an Application to PRISM Datasets for the US Midwest Regions" at the:
+<div style="margin-top:-0.05em"></div>
++ AAEA annual meeting in Denver, CO (Summer 2025)
++ AERE conference in Santa Ana Pueblo, NM (Summer 2025)
+
+
+"Yield Response to Nitrogen in Agricultural Production Models" at the AAEA annual meeting in Denver, CO (Summer 2025).
+
+"Machine Learning Methods for Site-specific Input Management" at the conference on Farmer-centric On-farm Experimentation (October 2021)
+
+<br>
+
+# {{< fa users >}} Workshops
+- Introduction to Making Presentation Slides with xaringan
+  -  Applied Economics Student Workshop Series at the University of Minnesota, April 30th, 2024

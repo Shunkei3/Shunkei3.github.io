@@ -6,17 +6,16 @@ toc: false
 about: 
     template: trestles
     image-shape: round
-    image-width: 30em
+    image-width: 25em
     links:
         - text: "{{< fa envelope size=2xl >}}"
           href: mailto:kakim002@umn.edu
-        - text: "{{< fa brands github size=2xl >}}"
+        - text: "{{< fa brands github size=2xl >}}" 
           href: https://github.com/Shunkei3
-        - text: "{{< ai orcid size=2xl >}}"
-          href: https://orcid.org/0000-0003-3279-6405
+        - text: "{{< fa graduation-cap size=2xl >}}"
+          href: https://scholar.google.com/citations?user=Noey-HkAAAAJ&hl=en
 engine: knitr
 ---
-
 
 ```{css}
 /*| echo: false */
@@ -26,7 +25,7 @@ engine: knitr
 }
 
 .about-link {
-  color: #2D5986 !important;
+  color: #1B540D !important;
   padding: 10px !important;
   border: 0 !important;
   border-radius: 5px !important;
@@ -43,7 +42,7 @@ h1 {
   line-height: 1.1;
   margin-bottom: 4px;
   font-size: 2em;
-  color: #515151 !important;
+  color: $dark-green !important;
 }
 
 h3 {
@@ -62,7 +61,7 @@ h4 {
 
 
 ```{r}
-#| label: printing-fuctions
+#| label: printing-factions
 #| echo: false
 
 wrap_li <- function(text = "text", fa = "fas fa-graduation-cap") {
@@ -82,21 +81,19 @@ print_list <- function(text = "text", fa = "fas fa-graduation-cap") {
 
 # Bio
 
-I am a third-year PhD student in the Department of Applied Economics at the University of Minnesota. Previously, I worked as a graduate research assistant at the Daugherty Water for Food Global Institute at the University of Nebraska and conducted research to understand the impacts of groundwater conservation policy on groundwater use in Nebraska. I am eager to address potential and on-going environmental and resource issues that people have not yet seen because of extensive economical development. I want to look at reciprocal interactions between the environment and economical development through incorporating findings of various fields and using state- of-the-art economic methods to derive useful insights for sustainable development.
-
-<!-- I am interested in conducting applied economic research with the goal of deepening our understanding of the economic system - environment interactions for better environment and resource management policymaking. -->
+I am a PhD student in Applied Economics at the University of Minnesota. Originally from Japan, I moved to the U.S. in 2019 to pursue my interest in environmental and natural resource economics. My research focuses on water resource economics, particularly groundwater management and its implications for agricultural production, as well as the economic impacts of climate change.
 
 <br>
 
-##### Interests
-- Environmental economics
-- Natural resource economics
-- Water economics
-- Agricultural economics
+### Interests
+- Environmental and natural resource economics
+- Economics of water resources
+- Technology Adoption and Diffusion
+- Agricultural production economics
 
 <br>
 
-##### Education
+### Education
 
 ```{r}
 #| label: print-ed

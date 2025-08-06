@@ -1,28 +1,42 @@
----
-title: "Teaching"
----
+
+# {{< fa scroll >}} Teaching Philosophy 
+I have served as a teaching assistant for various courses in Applied Economics. My main duties included leading weekly discussion sessions, creating and grading assignments, and holding office hours. 
+
+I lead my discussion sessions with a single motto: *knowing is different from understanding*. Although this sounds obvious, I think it is a critical insight for learning something. I tend to feel I understand the material after I go to lectures. However, once I face complicated questions in the problem set, I
+often find myself unable to figure out where to start thinking and how to apply the knowledge to approach the problems. This is a typical situation where I know the concepts but do not understand them. Whenever I encounter this situation, I fill in the argument that I missed to bridge my knowledge to the concepts I want to
+understand by reading related research articles or textbooks. From this, I learned that knowing a mathematical formula or concept as written is not the whole point of learning. Rather, understanding the concept together with its background, such as why it matters, for what kind of problem the concept is useful, and how it connects to other concepts, is important.
+
+In this light, in my discussion sessions, I remind students, “Do you really understand the material?” by asking basic questions and attempting to walk through in-depth arguments to aid them in applying the concepts. For example, in an econometric analysis class, although the definition of the sampling distribution is not difficult, when it comes to the question of why it is important to understand the sampling distribution, most of the students get stuck. To help them understand this point, I worked through a simple exercise with students to explain it step-by-step. Once students understand the foundation of the concepts, they will be able to correctly apply them to solve problem sets, which in turn leads to higher confidence and motivation to learn more. With the same spirit, whenever I give feedback to students on their assignments, I attempt to clarify why they got the wrong conclusion by suggesting the points that students missed or misunderstood. 
+
+Although I value the fundamental understanding of the concepts in my discussion sessions, I also try to avoid having students focus too much on the details and lose sight of the broader picture. Students are often required to cover many topics in a short period. Thus, they tend to be lost in what they are doing and how it is connected to the topics they learned previously. To address this, I periodically step back to highlight the overall structure of the material so that students understand where they are and how the topics fit together.
+
+I believe this approach has helped students engage more meaningfully with the material — a contribution that has been recognized by the following teaching awards and nominations:
+
++ **CFANS Graduate Assistant Teaching Award (2025)** - College of Food, Agricultural and Natural Resource Sciences, University of Minnesota
++ **Nominated for AAEA TLC Graduate Student Teaching Award (2024)** – by Professor Frances Homans
++ **Teaching Assistant Award for 5000/8000 Level Classes (2023-2024)** - Department of Applied Economics, University of Minnesota
 
 <br>
 
-## Teaching Instuctor
+# {{< fa pencil >}} Teaching Experience
+## Teaching Instructor
 
-- Application for R, Review Course, Ph.D. (UMN, summer 2024)
+- Application for R, Review Course, Ph.D. (University of Minnesota, summer 2024)
+  - A review course for Ph.D. students in Applied Economics to learn R programming and data analysis skills.
+  - You can find all the slides and documents for this course [here](https://shunkei3.github.io/R-2024-Summer).
 
 <br>
 
 ## Teaching Assistant
 
 ### *University of Minnesota*
-- APEC 8004 Applied Microeconomic Analysis of Social Choice and Welfare, Ph.D. (Spring 2024)
-- APEC 8003 Applied Microeconomic Analysis of Game Theory and Information, Ph.D. (Spring 2024)
-- APEC 8211 Econometric Analysis I, Ph.D. (Fall 2023)
-- APEC 8212 Econometric Analysis II, Ph.D. (Fall 2023)
+- Principles of Microeconomics (APEC 1101), Undergraduate (Fall 2025)
+- Applied Microeconomic Analysis of Game Theory and Information (APEC 8003), Ph.D. (Spring 2024)
+- Applied Microeconomic Analysis of Social Choice and Welfare (APEC 8004), Ph.D. (Spring 2024)
+- Econometric Analysis I (APEC 8211), Ph.D. (Fall 2023)
+- Econometric Analysis II (APEC 8212), Ph.D. (Fall 2023)
 
 ### *University of Nebraska-Lincoln*
 - AECN 896-003 Applied Econometrics, M.S. (Fall 2020, Spring 2022)
 
-<br>
 
-## Workshops
-- Introduction to Making Presentation Slides with xaringan
-  -  Applied Economics Student Workshop Series at the University of Minnesota, April 30th, 2024

@@ -1,12 +1,12 @@
 ---
-title: Curriculum vitæ
 engine: knitr
-date: 2024-05-14
+date: 2025-08-06
 published-title: CV last updated
 freeze: false
 cv:
-  pdf: "assets/CV/CV_Kakimoto.pdf"
+  pdf: "assets/CV/CV.pdf"
 ---
+
 <!-- see this: https://github.com/quarto-dev/quarto-cli/discussions/5863 -->
 
 ```{css, echo=FALSE}
@@ -37,11 +37,11 @@ cv:
 ```
 
 ```{=html}
-<p class="text-center">
+<!-- <p class="text-center">
   <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$cv$pdf`" target="_blank">
     <i class="fa-solid fa-file-arrow-down"></i>&ensp;Download current CV
   </a>
-</p>
+</p> -->
 
 <div class="embed-container">
   <iframe src="`r rmarkdown::metadata$cv$pdf`" style="border: 0.5px"></iframe>

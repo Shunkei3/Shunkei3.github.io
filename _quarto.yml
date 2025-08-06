@@ -3,20 +3,29 @@ project:
   output-dir: docs
 
 website:
+  title: "Shunkei Kakimoto"
+  open-graph: true
+  page-footer: "© 2025 Shunkei Kakimoto"
+  page-navigation: true
+  back-to-top-navigation: true
   navbar:
     left:
       - href: index.qmd
         text: "About"
+      - href: research.qmd
+        text: "Researches/Talks"
       - href: teaching.qmd
         text: "Teaching"
-      - research.qmd
-      - CV.qmd
+      - href: CV.qmd
+        text: "CV"
     right:
       - icon: github
         href: https://github.com/Shunkei3
 
 format:
   html:
+    page-layout: full
+    fontsize: 20px
     theme: assets/css/theme.scss
     mainfont: Roboto
     toc: true
