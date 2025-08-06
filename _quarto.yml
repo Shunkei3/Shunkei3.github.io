@@ -8,6 +8,7 @@ website:
   page-footer: "© 2025 Shunkei Kakimoto"
   page-navigation: true
   back-to-top-navigation: true
+  google-analytics: G-Z70HE9F4JL
   navbar:
     left:
       - href: index.qmd
