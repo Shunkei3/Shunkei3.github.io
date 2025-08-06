@@ -1,6 +1,6 @@
 ---
 title: "Shunkei Kakimoto"
-description: "柿元俊慧（Shunkei Kakimoto) - ミネソタ大学 応用経済学 博士課程"
+description: "柿元俊慧（Shunkei Kakimoto, かきもと　しゅんけい) - ミネソタ大学 応用経済学 博士課程"
 image: assets/image/IMG_0733.png
 page-layout: full
 toc: false

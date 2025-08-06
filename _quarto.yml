@@ -27,6 +27,11 @@ website:
       - icon: github
         href: https://github.com/Shunkei3
 
+site-metadata:
+  description: "柿元俊慧 (Shunkei Kakimoto, かきもと しゅんけい) - ミネソタ大学 応用経済学 博士課程"
+  keywords: ["柿元俊慧", "ミネソタ大学", "カキモトシュンケイ", "かきもと しゅんけい", "Shunkei Kakimoto"]
+
+    
 format:
   html:
     page-layout: full
