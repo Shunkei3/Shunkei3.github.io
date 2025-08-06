@@ -1,5 +1,6 @@
 ---
 title: "Shunkei Kakimoto"
+description: "柿元俊慧（Shunkei Kakimoto) - ミネソタ大学 応用経済学 博士課程"
 image: assets/image/IMG_0733.png
 page-layout: full
 toc: false
@@ -64,17 +65,19 @@ h4 {
 #| label: printing-factions
 #| echo: false
 
-wrap_li <- function(text = "text", fa = "fas fa-graduation-cap") {
+wrap_li <- 
+  function(text = "text", fa = "fas fa-graduation-cap") {
   li <- paste0("<li><i class='fa-li ", fa, "'></i>", text, "</li>\n")
   return(li)
 }
 
-print_list <- function(text = "text", fa = "fas fa-graduation-cap") {
-  open_ul  <- "<ul class='ul-edu fa-ul'>"
-  close_ul <- "</ul>"
-  items    <- wrap_li(text, fa)
-
-  cat(paste0(open_ul, "\n"), items, paste0("\n", close_ul))
+print_list <- 
+  function(text = "text", fa = "fas fa-graduation-cap") {
+    open_ul  <- "<ul class='ul-edu fa-ul'>"
+    close_ul <- "</ul>"
+    items    <- wrap_li(text, fa)
+    
+    cat(paste0(open_ul, "\n"), items, paste0("\n", close_ul))
 }
 
 ```
@@ -88,7 +91,7 @@ I am a PhD student in Applied Economics at the University of Minnesota. Original
 ### Interests
 - Environmental and natural resource economics
 - Economics of water resources
-- Technology Adoption and Diffusion
+- Technology adoption and diffusion
 - Agricultural production economics
 
 <br>

@@ -4,6 +4,7 @@ project:
 
 resources:
   - robots.txt
+metadata-files: [assets/misc/metadata.yml]
 
 website:
   title: "Shunkei Kakimoto"
