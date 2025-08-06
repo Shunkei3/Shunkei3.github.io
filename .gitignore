@@ -1,2 +1,6 @@
 
-/.quarto/
+# macOS system file
+/.DS_Store
+_site/
+.quarto
+
