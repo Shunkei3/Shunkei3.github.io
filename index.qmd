@@ -1,13 +1,13 @@
 ---
 title: "Shunkei Kakimoto"
 description: "柿元俊慧（Shunkei Kakimoto, かきもと　しゅんけい) - ミネソタ大学 応用経済学 博士課程"
-image: assets/image/IMG_0733.png
+image: assets/image/Shun-0071-small.jpg
 page-layout: full
 toc: false
 about: 
     template: trestles
     image-shape: round
-    image-width: 25em
+    image-width: 15em
     links:
         - text: "{{< fa envelope size=2xl >}}"
           href: mailto:kakim002@umn.edu
@@ -84,15 +84,16 @@ print_list <-
 
 # Bio
 
-I am a PhD student in Applied Economics at the University of Minnesota. Originally from Japan, I moved to the U.S. in 2019 to pursue my interest in environmental and natural resource economics. My research focuses on water resource economics, particularly groundwater management and its implications for agricultural production, as well as the economic impacts of climate change.
+I am an Applied Economics PhD student at the University of Minnesota. Born and raised in Japan, I moved to the U.S. in 2019 to pursue my studies in environmental and natural resource economics. My research focuses on environmental policy related to agricultural water use and quality. In particular, how groundwater management policies shape farmers’ production decisions. I also study the economic impacts of climate change on agriculture and water resources, and the factors driving the adoption and diffusion of conservation technologies and farming practices (e.g., more efficient irrigation technology, precision agriculture, reduced tillage, and cover cropping) with an emphasis on how policies can promote more efficient resource use and better environmental outcomes.
+
 
 <br>
 
 ### Interests
-- Environmental and natural resource economics
-- Economics of water resources
+- Economics of environmental and natural resources
+- Agricultural and Environmental Policy
 - Technology adoption and diffusion
-- Agricultural production economics
+- Economics of production
 
 <br>
 
