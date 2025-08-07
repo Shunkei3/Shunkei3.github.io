@@ -7,8 +7,9 @@ resources:
 metadata-files: [assets/misc/metadata.yml]
 
 website:
-  favicon: assets/image/favicon.ico
   title: "Shunkei Kakimoto"
+  favicon: assets/image/favicon.ico
+  # favicon: assets/image/favicon.png
   open-graph: true
   page-footer: "© 2025 Shunkei Kakimoto"
   page-navigation: true
