@@ -23,6 +23,8 @@ website:
         text: "Research & Talks"
       - href: teaching.qmd
         text: "Teaching"
+      - href: blog.qmd
+        text: "Blog"
       - href: CV.qmd
         text: "CV"
     right:
