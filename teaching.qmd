@@ -12,18 +12,19 @@ Although I value the fundamental understanding of the concepts in my discussion 
 
 I believe this approach has helped students engage more meaningfully with the material — a contribution that has been recognized by the following teaching awards and nominations:
 
-+ **CFANS Graduate Assistant Teaching Award (2025)** - College of Food, Agricultural and Natural Resource Sciences, University of Minnesota
-+ **Nominated for AAEA TLC Graduate Student Teaching Award (2024)** – by Professor Frances Homans
-+ **Teaching Assistant Award for 5000/8000 Level Classes (2023-2024)** - Department of Applied Economics, University of Minnesota
++ **CFANS Graduate Assistant Teaching Award (2025)^[For teaching *APEC 1101: Principles of Microeconomics*]** - College of Food, Agricultural and Natural Resource Sciences, University of Minnesota
++ **Nominated for AAEA TLC Graduate Student Teaching Award (2024)^[For teaching *APEC 8211–8212: Econometrics I & II*]** – by Professor Frances Homans
++ **Teaching Assistant Award for 5000/8000 Level Classes^[For teaching *APEC 8211–8212: Econometrics I & II* and *APEC 8003-8004: Applied Microeconomic Analysis*] (2023-2024)** - Department of Applied Economics, University of Minnesota
 
 <br>
 
 # {{< fa pencil >}} Teaching Experience
 ## Teaching Instructor
 
-- Application for R, Review Course, Ph.D. (University of Minnesota, summer 2024)
-  - A review course for Ph.D. students in Applied Economics to learn R programming and data analysis skills.
-  - You can find all the slides and documents for this course [here](https://shunkei3.github.io/R-2024-Summer).
+- Applied R Programming Review Course, Ph.D. (University of Minnesota, summer 2024)
+  - Designed and taught a review course for Ph.D. students in Applied Economics and the Humphrey School of Public Affairs on R programming and data analysis.
+  - The course website is available [**{{< fa laptop-code >}} here**](https://shunkei3.github.io/R-2024-Summer).
+
 
 <br>
 
@@ -31,8 +32,8 @@ I believe this approach has helped students engage more meaningfully with the ma
 
 ### *University of Minnesota*
 - Principles of Microeconomics (APEC 1101), Undergraduate (Fall 2024)
-- Applied Microeconomic Analysis of Game Theory and Information (APEC 8003), Ph.D. (Spring 2024)
 - Applied Microeconomic Analysis of Social Choice and Welfare (APEC 8004), Ph.D. (Spring 2024)
+- Applied Microeconomic Analysis of Game Theory and Information (APEC 8003), Ph.D. (Spring 2024)
 - Econometric Analysis I (APEC 8211), Ph.D. (Fall 2023)
 - Econometric Analysis II (APEC 8212), Ph.D. (Fall 2023)
 

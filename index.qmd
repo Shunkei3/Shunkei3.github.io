@@ -87,7 +87,7 @@ print_list <-
 
 # Bio
 
-I am a PhD student in Applied Economics at the University of Minnesota. Born and raised in Japan, I moved to the U.S. in 2019 to pursue my studies in environmental and natural resource economics. My research focuses on environmental policy related to agricultural water use and quality. In particular, how groundwater management policies shape farmers’ production decisions. I am also interested in understanding the mechanisms that drive the adoption and diffusion of conservation technologies and farming practices (e.g., more efficient irrigation technology, precision agriculture, reduced tillage, and cover cropping) with an emphasis on how policy can encourage their adoption to improve resource use efficiency and environmental outcomes.
+I am a PhD student in Applied Economics at the University of Minnesota. My research examines how environmental and agricultural policies affect water use and water quality. I also study  the adoption of conservation technologies and farming practices and how such adoptions influence producers’ behavioral responses. Through my research, I aim to provide insights that inform policies promoting efficient resource use and improved environmental outcomes.
 
 
 <br>
@@ -95,7 +95,7 @@ I am a PhD student in Applied Economics at the University of Minnesota. Born and
 ### Interests
 - Economics of environmental and natural resources
 - Agricultural and environmental policy
-- Technology adoption and diffusion
+- Economics of technology adoption and diffusion
 - Economics of production
 
 <br>
