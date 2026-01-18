@@ -24,10 +24,13 @@ engine: knitr
 ```{css}
 /*| echo: false */
 
+;
+
 .about-entity {
   padding-top: 100px;
 }
 
+/* styling for icons in about me section */
 .about-link {
   color: #1B540D !important;
   padding: 10px !important;
@@ -38,29 +41,18 @@ engine: knitr
 
 /* when hovering on icons */
 .about-link:hover {
-  background-color: #717171 !important;
+  /* background-color: #5E6A7D !important; */
+  background-color: #5F6A72 !important;
 }
 
-
-h1 {
+/* I don't need these for now
+/* h2 {
+  color: #1B540D !important;
   line-height: 1.1;
   margin-bottom: 4px;
   font-size: 2em;
-  color: $dark-green !important;
-}
-
-h3 {
-  color: #5F6A72;
-  margin-bottom: 8px;
-  margin-top: 0px;
-}
-
-h4 {
-  color: #cc0033;
-  text-transform: none;
-  font-size: 18px;
-  margin-top: 0px;
-}
+  color: # !important;
+} */
 ```
 
 
@@ -85,14 +77,15 @@ print_list <-
 
 ```
 
-# Bio
+# About Me
+I am a PhD student in Applied Economics at the University of Minnesota. My research interests lie in the intersection of environmental and resource economics and agricultural production economics, with an emphasis on agricultural water resource management and related environmental and agricultural policy issues. I also study the adoption of conservation technologies. On this topic, I am particularly interested in understanding how such adoptions influence producers' resource management decisions, and environmental and economic outcomes. I use microeconomic theories and econometric methods using large-scale datasets to contribute to the theoretical explanations and empirical evidence on these issues. 
 
-I am a PhD student in Applied Economics at the University of Minnesota. My research examines how environmental and agricultural policies affect water use and water quality. I also study  the adoption of conservation technologies and farming practices and how such adoptions influence producers’ behavioral responses. Through my research, I aim to provide insights that inform policies promoting efficient resource use and improved environmental outcomes.
+<!-- . Through my research, I aim to provide insights that inform policies promoting efficient resource use and improved environmental outcomes while supporting producers' well-being. -->
 
 
 <br>
 
-### Interests
+# Interests
 - Economics of environmental and natural resources
 - Agricultural and environmental policy
 - Economics of technology adoption and diffusion
@@ -100,7 +93,7 @@ I am a PhD student in Applied Economics at the University of Minnesota. My resea
 
 <br>
 
-### Education
+# Education
 
 ```{r}
 #| label: print-ed
@@ -114,3 +107,8 @@ print_list(
     )
   )
 ```
+
+<br>
+
+<!-- # Certifications
+- Certificate of completion for Minnesota Irrigator Program (2025) -->

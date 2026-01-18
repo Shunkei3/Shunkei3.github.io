@@ -1,18 +1,16 @@
 /*-- scss:defaults --*/
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+// Roboto font
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 // fonts
 // $font-family-sans-serif: "Maven Pro", "Yanone Kaffeesatz" !default;
 // $font-family-monospace: "Fira Mono" !default;
 
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet");
+
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
 
 // Colors
-// $dark-green: #858E79;
-// $light-green: #D1D9CE;
-// $cream: #FDFBF7;
-// $gray: #64605f;
-// $purple: #9158A2;
-// $orange: #ad7237;
 $light-blue: #6699CC;
 $bright-blue: #0d6efd;
 $light-maroon: #DD5746;
@@ -20,43 +18,63 @@ $light-maroon: #DD5746;
 $dark-green: #1B540D;
 $light-green: #628C66;
 $lightest-green: #79AD7F;
-$grey: #5F6A72;
-$my-font-size: 25px;
+$seaweed: #9b927d;
+$grey: #4B5563;
+$light-grey: #6B7280;
+// $book-blue: #65C1DE;
+
+// $my-font-size: 25px;
+
+
+// New color combo
+$background-color: #F3F4F2;
+// $background-color: #F5F5F5;
+$h1-color: $dark-green; // original
+// $h1-color: #0C6038;
+// $h2-color: #grey; // original
+// $h2-color: #2D4C39; // 
+$h2-color: #517b58; //#3A5A40; // or  #4A6A4F
+// $h3-color: $grey;
+$h3-color: $light-grey;
+$h4-color: $seaweed;
+// $h4-color: #554940;
+
+
 
 h1 {
-    font-size: 36px;
-    color: $dark-green !important;
+    font-size: 36px !important;
+    color: $h1-color !important;
     font-family: 'DM Serif Display',serif;
   }
 
 h2 {
-  font-size: 28px;
-  color: $grey !important;
+  font-size: 30px !important;
+  color: $h2-color !important;
   font-family: 'DM Serif Display',serif;
 }
 
 h3 {
-  font-size: 24px;
-  color: $grey !important;
+  font-size: 27px !important;;
+  color: $h3-color !important;
   font-family: 'DM Serif Display',serif;
 }
 
 h4 {
-  font-size: 20px;
-  color: $light-maroon !important;
+  font-size: 14px;
+  color: $h4-color !important;
   font-family: 'DM Serif Display',serif;
 }
 
 // Base document colors
-$navbar-bg: #FFFF; // navbar
-// $navbar-fg: $dark-green; // navbar foreground elements
-$navbar-hl: $dark-green; // highlight color when hovering over navbar links
-$body-bg: #FFFF; // page background 
+$body-bg: $background-color; // page background 
+$navbar-bg: $background-color; // navbar
+$navbar-hl: $h1-color; // highlight color when hovering over navbar links
+
 // $body-bg: #FFFFF4;
 $body-color: #313131; // page text 
 // $footer-bg: $cream; // footer 
 $link-color: $light-green; // hyperlinks 
-$link-color-hover:$dark-green;
+$link-color-hover:$h1-color;
 
 // Inline code
 // $code-bg: $cream; // inline code background color
