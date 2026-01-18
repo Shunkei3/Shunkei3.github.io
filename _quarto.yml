@@ -18,18 +18,23 @@ website:
   navbar:
     left:
       - href: index.qmd
+        icon: person-circle
         text: "About"
       - href: research.qmd
+        icon: journals
         text: "Research & Talks"
       - href: teaching.qmd
+        icon: mortarboard
         text: "Teaching"
-      - href: blog.qmd
-        text: "Blog"
+      - href: posts/index.qmd
+        icon: pencil-square
+        text: "Posts"
       - href: CV.qmd
+        icon: file-earmark-check
         text: "CV"
     right:
       - icon: github
-        href: https://github.com/Shunkei3
+        href: https://github.com/Shunkei3/Shunkei3.github.io
 
 site-metadata:
   description: "柿元俊慧 (Shunkei Kakimoto, かきもと しゅんけい) - ミネソタ大学 応用経済学 博士課程"

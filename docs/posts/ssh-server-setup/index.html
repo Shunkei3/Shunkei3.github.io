@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-01-10">
+<meta name="description" content="SSH provides a practical way to access the resources of a powerful desktop workstation from a laptop. This post explains why this works and how to set it up.">
+
+<title>Using SSH to Access the Power of a Desktop Workstation from a Laptop – Shunkei Kakimoto</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/image/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-ef670381d910e699fba524742e2a649e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z70HE9F4JL"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-Z70HE9F4JL', { 'anonymize_ip': true});
+</script>
+
+
+<meta property="og:title" content="Using SSH to Access the Power of a Desktop Workstation from a Laptop – Shunkei Kakimoto">
+<meta property="og:description" content="SSH provides a practical way to access the resources of a powerful desktop workstation from a laptop. This post explains why this works and how to set it up.">
+<meta property="og:image" content="ssh_image1.png">
+<meta property="og:site_name" content="Shunkei Kakimoto">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Shunkei Kakimoto</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> <i class="bi bi-person-circle" role="img">
+</i> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../research.html"> <i class="bi bi-journals" role="img">
+</i> 
+<span class="menu-text">Research &amp; Talks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../teaching.html"> <i class="bi bi-mortarboard" role="img">
+</i> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts/index.html"> <i class="bi bi-pencil-square" role="img">
+</i> 
+<span class="menu-text">Posts</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../CV.html"> <i class="bi bi-file-earmark-check" role="img">
+</i> 
+<span class="menu-text">CV</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Shunkei3/Shunkei3.github.io"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#target-audience" id="toc-target-audience" class="nav-link active" data-scroll-target="#target-audience">Target Audience</a></li>
+  <li><a href="#background-of-my-situation" id="toc-background-of-my-situation" class="nav-link" data-scroll-target="#background-of-my-situation">Background of My Situation</a></li>
+  <li><a href="#mental-model" id="toc-mental-model" class="nav-link" data-scroll-target="#mental-model">Mental Model</a>
+  <ul>
+  <li><a href="#basic-idea-how-ssh-fits-in" id="toc-basic-idea-how-ssh-fits-in" class="nav-link" data-scroll-target="#basic-idea-how-ssh-fits-in">Basic idea &amp; How SSH fits in</a></li>
+  <li><a href="#why-vs-code-remote-ssh-matters" id="toc-why-vs-code-remote-ssh-matters" class="nav-link" data-scroll-target="#why-vs-code-remote-ssh-matters">Why VS Code Remote SSH matters</a></li>
+  </ul></li>
+  <li><a href="#setting-up-vs-code-remote-ssh" id="toc-setting-up-vs-code-remote-ssh" class="nav-link" data-scroll-target="#setting-up-vs-code-remote-ssh">Setting up VS Code Remote SSH</a>
+  <ul>
+  <li><a href="#step-1-preparing-the-desktop-computer-the-server" id="toc-step-1-preparing-the-desktop-computer-the-server" class="nav-link" data-scroll-target="#step-1-preparing-the-desktop-computer-the-server">Step 1: Preparing the Desktop Computer (The Server)</a>
+  <ul class="collapse">
+  <li><a href="#step-1.1-enabling-ssh-access" id="toc-step-1.1-enabling-ssh-access" class="nav-link" data-scroll-target="#step-1.1-enabling-ssh-access">Step 1.1 Enabling SSH Access</a></li>
+  <li><a href="#step-1.2-preventing-sleep-mode" id="toc-step-1.2-preventing-sleep-mode" class="nav-link" data-scroll-target="#step-1.2-preventing-sleep-mode">Step 1.2 Preventing Sleep Mode</a></li>
+  <li><a href="#step-1.3-finding-username-hostname" id="toc-step-1.3-finding-username-hostname" class="nav-link" data-scroll-target="#step-1.3-finding-username-hostname">Step 1.3 Finding Username &amp; Hostname</a></li>
+  </ul></li>
+  <li><a href="#step-2-setting-up-the-laptop-the-client" id="toc-step-2-setting-up-the-laptop-the-client" class="nav-link" data-scroll-target="#step-2-setting-up-the-laptop-the-client">Step 2: Setting up the Laptop (The Client)</a>
+  <ul class="collapse">
+  <li><a href="#step-2.1-generate-an-ssh-key" id="toc-step-2.1-generate-an-ssh-key" class="nav-link" data-scroll-target="#step-2.1-generate-an-ssh-key">Step 2.1 Generate an SSH Key</a></li>
+  <li><a href="#step-2.2-copy-the-public-key-to-the-server" id="toc-step-2.2-copy-the-public-key-to-the-server" class="nav-link" data-scroll-target="#step-2.2-copy-the-public-key-to-the-server">Step 2.2 Copy the Public Key to the Server</a></li>
+  <li><a href="#step-2.3-test-ssh-connection" id="toc-step-2.3-test-ssh-connection" class="nav-link" data-scroll-target="#step-2.3-test-ssh-connection">Step 2.3 Test SSH Connection</a></li>
+  </ul></li>
+  <li><a href="#step-3-setting-up-vs-code-remote-ssh-on-your-laptop" id="toc-step-3-setting-up-vs-code-remote-ssh-on-your-laptop" class="nav-link" data-scroll-target="#step-3-setting-up-vs-code-remote-ssh-on-your-laptop">Step 3: Setting up VS Code Remote SSH on Your Laptop</a>
+  <ul class="collapse">
+  <li><a href="#step-3.1-install-the-remote---ssh-extension" id="toc-step-3.1-install-the-remote---ssh-extension" class="nav-link" data-scroll-target="#step-3.1-install-the-remote---ssh-extension">Step 3.1 Install the Remote - SSH Extension</a></li>
+  <li><a href="#step-3.2-add-a-new-ssh-host" id="toc-step-3.2-add-a-new-ssh-host" class="nav-link" data-scroll-target="#step-3.2-add-a-new-ssh-host">Step 3.2 Add a New SSH Host</a></li>
+  <li><a href="#step-3.3-connect-to-the-ssh-host" id="toc-step-3.3-connect-to-the-ssh-host" class="nav-link" data-scroll-target="#step-3.3-connect-to-the-ssh-host">Step 3.3 Connect to the SSH Host</a></li>
+  <li><a href="#step-3.4-quick-check" id="toc-step-3.4-quick-check" class="nav-link" data-scroll-target="#step-3.4-quick-check">Step 3.4 Quick Check:</a></li>
+  </ul></li>
+  <li><a href="#step-4-setup-tailscale-for-secure-remote-access-across-networks" id="toc-step-4-setup-tailscale-for-secure-remote-access-across-networks" class="nav-link" data-scroll-target="#step-4-setup-tailscale-for-secure-remote-access-across-networks">Step 4: Setup Tailscale for Secure Remote Access Across Networks</a>
+  <ul class="collapse">
+  <li><a href="#step-4.1-create-a-tailscale-account" id="toc-step-4.1-create-a-tailscale-account" class="nav-link" data-scroll-target="#step-4.1-create-a-tailscale-account">Step 4.1 Create a Tailscale Account</a></li>
+  <li><a href="#step-4.2-set-up-tailscale-on-the-server" id="toc-step-4.2-set-up-tailscale-on-the-server" class="nav-link" data-scroll-target="#step-4.2-set-up-tailscale-on-the-server">Step 4.2 Set up Tailscale on the Server</a></li>
+  <li><a href="#step-4.3-set-up-tailscale-on-the-client" id="toc-step-4.3-set-up-tailscale-on-the-client" class="nav-link" data-scroll-target="#step-4.3-set-up-tailscale-on-the-client">Step 4.3 Set up Tailscale on the Client</a></li>
+  <li><a href="#step-4.4-turn-on-magicdns" id="toc-step-4.4-turn-on-magicdns" class="nav-link" data-scroll-target="#step-4.4-turn-on-magicdns">Step 4.4 Turn on MagicDNS</a></li>
+  <li><a href="#step-4.5-test-ssh-connection-over-tailscale" id="toc-step-4.5-test-ssh-connection-over-tailscale" class="nav-link" data-scroll-target="#step-4.5-test-ssh-connection-over-tailscale">Step 4.5 Test SSH Connection over Tailscale</a></li>
+  <li><a href="#step-4.6-shortcut-for-connecting-to-the-remote-server" id="toc-step-4.6-shortcut-for-connecting-to-the-remote-server" class="nav-link" data-scroll-target="#step-4.6-shortcut-for-connecting-to-the-remote-server">Step 4.6 Shortcut for Connecting to the Remote Server</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#bonus" id="toc-bonus" class="nav-link" data-scroll-target="#bonus">Bonus</a>
+  <ul>
+  <li><a href="#opening-a-specific-project-directory-on-the-remote-server-from-the-laptop-terminal" id="toc-opening-a-specific-project-directory-on-the-remote-server-from-the-laptop-terminal" class="nav-link" data-scroll-target="#opening-a-specific-project-directory-on-the-remote-server-from-the-laptop-terminal">Opening a Specific Project Directory on the Remote Server from the Laptop Terminal</a></li>
+  <li><a href="#using-tmux-for-persistent-sessions-optional" id="toc-using-tmux-for-persistent-sessions-optional" class="nav-link" data-scroll-target="#using-tmux-for-persistent-sessions-optional">Using <code>tmux</code> for Persistent Sessions (Optional)</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-page-left" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><strong>Using SSH to Access the Power of a Desktop Workstation from a Laptop</strong></h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">ssh</div>
+    <div class="quarto-category">vscode</div>
+    <div class="quarto-category">remote-development</div>
+    <div class="quarto-category">terminal</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    SSH provides a practical way to access the resources of a powerful desktop workstation from a laptop. This post explains why this works and how to set it up.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta column-page-left">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 10, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- ssh: Secure Shell protocol -->
+<!-- I want to insert an picture here -->
+<p><img src="ssh_image1.png" class="img-fluid" alt="SSH Architecture" width="800"></p>
+<p><br></p>
+<section id="target-audience" class="level2">
+<h2 class="anchored" data-anchor-id="target-audience">Target Audience</h2>
+<p><strong>This post is aimed at researchers who run real computational workloads but do not have formal training in system administration or software engineering.</strong> Especially, if you own multiple computers, such as a powerful desktop workstation and a lightweight laptop, and have wondered about the following questions, this post might be useful for you:</p>
+<ul>
+<li><p><strong><em>“Can I utilize the CPU, memory, and storage of my desktop computer in my home while working remotely—for example, from my university office or a library?”</em></strong></p></li>
+<li><p><strong><em>“Can I work with datasets stored on my desktop computer without downloading or copying them to my laptop? I also don’t like to carry around large external hard drives.”</em></strong></p></li>
+<li><p><strong><em>“Can I monitor progress and diagnose errors in long-running jobs without sitting in front of my desktop machine?”</em></strong></p></li>
+<li><p><strong><em>“Is there a way to avoid constantly worrying about the storage and performance limits of my laptop?”</em></strong></p></li>
+</ul>
+<p>These challenges are unlikely to be unique to me. As working with large datasets and computationally intensive tasks has become a standard part of academic research, many researchers face similar constraints in their day-to-day workflows.</p>
+<p>The solution I eventually settled on is based on SSH (Secure Shell). <strong>It is not a new idea in computing circles, but it seems like it is under-documented, under-taught, and under-utilized in the research community</strong>. When I first saw the term “SSH”, it sounded like a tool for software developers and system administrators, but not for academic researchers. However, after exploring its capabilities, I realized that SSH can be a powerful tool for researchers who work on intensive computational tasks and large datasets as well. Also I believe that the opportunity cost of learning and setting up SSH is much lower than the potential benefit it can bring to your workflow.</p>
+<p>Being able to seamlessly access and utilize resources of a more powerful machine can be beneficial. My hope is to be helpful to those who might be facing similar challenges in their workflow by sharing my experience.</p>
+</section>
+<section id="background-of-my-situation" class="level2">
+<h2 class="anchored" data-anchor-id="background-of-my-situation">Background of My Situation</h2>
+<p>I use two machines for my research work. One is a relatively powerful desktop computer, a Mac Studio, that I mainly use at home. It is the most powerful (and expensive) machine I have ever owned. The other is a lightweight laptop, a ThinkPad running Linux (Ubuntu), which I use when working from my university office, the library, or elsewhere.</p>
+<p>Whenever I worked on my laptop, the same questions kept coming back to me: how could I best utilize the power of my desktop computer while I was away from home? My laptop has limited storage and computing capacity, while my desktop has abundant resources that often sat idle simply because I was not physically in front of it.</p>
+<p>After some research and trial-and-error, I found a solution that works well for me: using the SSH (Secure Shell) protocol together with the VS Code Remote SSH extension<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Once I establish an SSH connection between my laptop and desktop computer, I can access the desktop computer remotely. This allows me to run commands, execute programs, and manage files on the desktop machine from my laptop, as if I were physically sitting in front of it. For typical coding, data analysis, and job monitoring, I have found the remote setup to feel effectively indistinguishable from working locally<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>In the next section, I outline the steps I took to set up this workflow. I will not go into exhaustive technical details, but rather describe how I set up SSH and VS Code Remote SSH in practice. But before that, let me walk through the basic idea behind this workflow.</p>
+</section>
+<section id="mental-model" class="level2">
+<h2 class="anchored" data-anchor-id="mental-model">Mental Model</h2>
+<section id="basic-idea-how-ssh-fits-in" class="level3">
+<h3 class="anchored" data-anchor-id="basic-idea-how-ssh-fits-in">Basic idea &amp; How SSH fits in</h3>
+<p>In my setup, the desktop computer acts as the machine where all computation and data live, while the laptop serves primarily as an interface for accessing and controlling that machine. Rather than copying files back and forth or trying to keep multiple machines in sync, I treat the desktop computer as the single place where my research environment exists.</p>
+<p>In more technical terms, the desktop computer functions as a <strong>server</strong> that is always available on my home network, while the laptop acts as a <strong>client</strong> that connects to it on demand. When the two are connected, the laptop sends commands to the desktop computer, all computation happens on the desktop machine, and the results are sent back to the laptop for display.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>Because this communication happens over a network, it needs to be secure and private. This is where SSH comes in. SSH provides a secure way for the laptop to connect to the desktop computer and communicate with it without exposing the connection to others on the network.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+</section>
+<section id="why-vs-code-remote-ssh-matters" class="level3">
+<h3 class="anchored" data-anchor-id="why-vs-code-remote-ssh-matters">Why VS Code Remote SSH matters</h3>
+<p>While SSH alone is sufficient for running commands and managing files, when you are coding through VS Code, VS Code Remote SSH extension is what makes this setup truly practical for coding and data analysis. It allows the VS Code interface on my laptop to connect to a full development environment running on the remote desktop computer. Extensions that are relevant to coding and execution run on the remote machine, while the editor interface remains local. Instead of merely accessing files, I can open remote project directories directly in VS Code, edit code, run scripts, use the integrated terminal, and take advantage of language features such as autocomplete and debugging—all operating in the remote environment where the data and computation reside. From the user’s perspective, the editor behaves just like local VS Code, even though all IDE functionality runs on the desktop machine.</p>
+<p>For more details about the VS Code Remote SSH extension, please refer to the official documentation: <a href="https://code.visualstudio.com/docs/remote/ssh">Remote Development using SSH - Visual Studio Code</a>.</p>
+</section>
+</section>
+<section id="setting-up-vs-code-remote-ssh" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-vs-code-remote-ssh">Setting up VS Code Remote SSH</h2>
+<p>With this mental model in mind, the actual setup is relatively straightforward. In the remainder of this section, I walk through the steps I took to configure SSH access on my desktop and laptop computers and how to connect them, and then set up VS Code Remote SSH.</p>
+<section id="step-1-preparing-the-desktop-computer-the-server" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-preparing-the-desktop-computer-the-server">Step 1: Preparing the Desktop Computer (The Server)</h3>
+<section id="step-1.1-enabling-ssh-access" class="level4">
+<h4 class="anchored" data-anchor-id="step-1.1-enabling-ssh-access">Step 1.1 Enabling SSH Access</h4>
+<p>If you are using a Mac (like me) and want to make it as a server that can be accessed via SSH, you need to enable Remote Login in the System Preferences.</p>
+<ol type="1">
+<li>System Settings &gt; General &gt; Sharing</li>
+<li>Turn on “Remote Login”</li>
+<li>Click <i class="fa-solid fa-circle-info" aria-label="circle-info"></i> next to “Remote Login”</li>
+<li>Under “Allow access for”, select “Only these users” and add your user account.</li>
+</ol>
+<p>This starts the SSH server on your Mac.</p>
+</section>
+<section id="step-1.2-preventing-sleep-mode" class="level4">
+<h4 class="anchored" data-anchor-id="step-1.2-preventing-sleep-mode">Step 1.2 Preventing Sleep Mode</h4>
+<p>Here are the steps:</p>
+<ol type="1">
+<li>System Settings &gt; Energy</li>
+<li>In the Energy settings:<br>
+2.1 Turn on “Prevent automatic sleeping when the display is off” and “Wake for network access” options. 2.3 Turn off the “Put hard disks to sleep when possible” option.</li>
+</ol>
+</section>
+<section id="step-1.3-finding-username-hostname" class="level4">
+<h4 class="anchored" data-anchor-id="step-1.3-finding-username-hostname">Step 1.3 Finding Username &amp; Hostname</h4>
+<p>Open Terminal on your Mac, and run</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>whoami # to get your username</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>hostname # to get your hostname (i.e., server name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>&lt;username@hostname&gt;</code> will be your SSH address to connect to this Mac from your laptop.　For example, if <code>whoami</code> returns <code>jo</code>, and <code>hostname</code> returns <code>jos-Mac-Studio.local</code>, then your SSH address</p>
+<p><br></p>
+</section>
+</section>
+<section id="step-2-setting-up-the-laptop-the-client" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-setting-up-the-laptop-the-client">Step 2: Setting up the Laptop (The Client)</h3>
+<p>I assume that you have already installed VS Code on your laptop.</p>
+<section id="step-2.1-generate-an-ssh-key" class="level4">
+<h4 class="anchored" data-anchor-id="step-2.1-generate-an-ssh-key">Step 2.1 Generate an SSH Key</h4>
+<p>Open Terminal on your laptop, and run the following command</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ssh-keygen -t ed25519</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Press Enter to accept the default file location. What this does is to generate a pair of cryptographic keys (public and private keys) using the <a href="https://en.wikipedia.org/wiki/EdDSA">ed25519 algorithm</a> for SSH authentication in your <code>~/.ssh</code> directory on your laptop.</p>
+</section>
+<section id="step-2.2-copy-the-public-key-to-the-server" class="level4">
+<h4 class="anchored" data-anchor-id="step-2.2-copy-the-public-key-to-the-server">Step 2.2 Copy the Public Key to the Server</h4>
+<p>Next, copy the public key to the server (in my case, the Mac Studio). A copy of the public key of your laptop needs to be transferred to the server using the SSH address you found in Step 1.3.</p>
+<p>Run the following command in your <strong>laptop</strong> terminal:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ssh-copy-id &lt;username@hostname&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Please replace <code>&lt;username@hostname&gt;</code> with your actual SSH address of the server.</p>
+</section>
+<section id="step-2.3-test-ssh-connection" class="level4">
+<h4 class="anchored" data-anchor-id="step-2.3-test-ssh-connection">Step 2.3 Test SSH Connection</h4>
+<p>Now, test the plain SSH connection on your laptop terminal:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ssh &lt;username@hostname&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you successfully connect to the server, you should see a terminal prompt of the remote machine. You can type <code>exit</code> to disconnect from the server and return to your laptop terminal.</p>
+<p><br></p>
+</section>
+</section>
+<section id="step-3-setting-up-vs-code-remote-ssh-on-your-laptop" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-setting-up-vs-code-remote-ssh-on-your-laptop">Step 3: Setting up VS Code Remote SSH on Your Laptop</h3>
+<section id="step-3.1-install-the-remote---ssh-extension" class="level4">
+<h4 class="anchored" data-anchor-id="step-3.1-install-the-remote---ssh-extension">Step 3.1 Install the Remote - SSH Extension</h4>
+<p>On your laptop, open VS Code, go to the Extensions view (Ctrl+Shift+X or Cmd+Shift+X), and search for <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">“Remote – SSH”</a> extension by Microsoft. Install it.</p>
+</section>
+<section id="step-3.2-add-a-new-ssh-host" class="level4">
+<h4 class="anchored" data-anchor-id="step-3.2-add-a-new-ssh-host">Step 3.2 Add a New SSH Host</h4>
+<p>Open your laptop VS Code, and follow these steps:</p>
+<ol type="1">
+<li>Open the Command Palette (Ctrl+Shift+P or Cmd+Shift+P), and type “Remote-SSH: Add New SSH Host …”. Select it.</li>
+<li>In the input box, enter the SSH address of your server that you found in Step 1.3, e.g., <code>&lt;username@hostname&gt;</code>. Press Enter.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="enter_ssh.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="600"></p>
+</figure>
+</div>
+</section>
+<section id="step-3.3-connect-to-the-ssh-host" class="level4">
+<h4 class="anchored" data-anchor-id="step-3.3-connect-to-the-ssh-host">Step 3.3 Connect to the SSH Host</h4>
+<ol type="1">
+<li>In VS Code, open the Command Palette again.</li>
+<li>Type “Remote-SSH: Connect to Host” and select the host you just added (e.g., <code>&lt;username@hostname&gt;</code>).</li>
+<li>A new VS Code window will open, connected to the remote server. You can now open folders, edit files, and run commands on the remote machine directly from this window.</li>
+</ol>
+<p>Or, you can also click the <code>&gt;&lt;</code> icon in the bottom-left corner of VS Code window, and select the SSH host from the list.</p>
+</section>
+<section id="step-3.4-quick-check" class="level4">
+<h4 class="anchored" data-anchor-id="step-3.4-quick-check">Step 3.4 Quick Check:</h4>
+<ol type="1">
+<li>Open the integrated terminal in VS Code (Ctrl+<code>or Cmd+</code>).</li>
+<li>Type <code>pwd</code> and press Enter. You should see the home directory of the remote server.</li>
+</ol>
+<p>If you see that, congratulations! You have successfully set up VS Code Remote SSH</p>
+<p><br></p>
+<p><br></p>
+</section>
+</section>
+<section id="step-4-setup-tailscale-for-secure-remote-access-across-networks" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-setup-tailscale-for-secure-remote-access-across-networks">Step 4: Setup Tailscale for Secure Remote Access Across Networks</h3>
+<p>Although the setup above works well when both your desktop computer (server) and laptop (client) are on the same local network (e.g., at home), it typically does not work once they are on different networks (e.g., when your laptop is on university or public Wi-Fi). In such cases, the desktop computer is usually behind a home router and firewall, and direct SSH access from outside the local network is blocked unless you configure port forwarding, which can be complex and potentially insecure.</p>
+<p>To connect securely across networks, you can use <a href="https://tailscale.com/"><strong>Tailscale</strong></a>. Tailscale is free, and it creates a secure, encrypted private network between your devices, making them behave as if they were on the same LAN. This allows you to use SSH (and use VS Code Remote-SSH) reliably from anywhere.</p>
+<p>Please see this website for more details: <a href="https://tailscale.com/kb/1017/install?utm_source=chatgpt.com">Tailscale quickstart</a>.</p>
+<section id="step-4.1-create-a-tailscale-account" class="level4">
+<h4 class="anchored" data-anchor-id="step-4.1-create-a-tailscale-account">Step 4.1 Create a Tailscale Account</h4>
+<p>Create a Tailscale account at <a href="https://tailscale.com/">Tailscale</a>. You’ll manage devices later from the Tailscale admin console.</p>
+</section>
+<section id="step-4.2-set-up-tailscale-on-the-server" class="level4">
+<h4 class="anchored" data-anchor-id="step-4.2-set-up-tailscale-on-the-server">Step 4.2 Set up Tailscale on the Server</h4>
+<p>On the server (your desktop computer), follow these steps:</p>
+<ul>
+<li>Download and install Tailscale on the server machine (Follow the instructions on Tailscale website).</li>
+<li>Open the Tailscale app and log in with your Tailscale account.</li>
+<li>On the Tailscale app, go to “Settings”, and click “Show me how” under CLI integration. Then, allow to add tailscale command to your PATH.</li>
+<li>Open Terminal, and run <code>tailscale status</code> to verify that Tailscale is running.</li>
+</ul>
+</section>
+<section id="step-4.3-set-up-tailscale-on-the-client" class="level4">
+<h4 class="anchored" data-anchor-id="step-4.3-set-up-tailscale-on-the-client">Step 4.3 Set up Tailscale on the Client</h4>
+<p>On the client (your laptop), follow similar steps. I am using Ubuntu on my laptop, so I followed <a href="https://tailscale.com/download/linux">the instructions for Linux on Tailscale website</a>. I simply ran the codes illustrated there.</p>
+<p>Open Tailscale admin console, and verify that both your server and client devices are listed there.</p>
+</section>
+<section id="step-4.4-turn-on-magicdns" class="level4">
+<h4 class="anchored" data-anchor-id="step-4.4-turn-on-magicdns">Step 4.4 Turn on MagicDNS</h4>
+<p><a href="https://tailscale.com/kb/1017/install?utm_source=chatgpt.com">As Tailscale recommends</a>, I checked that Magic DNS is turned on. It makes it easier to connect to your devices using human-readable names instead of IP addresses. To do this, go to the Tailscale admin console &gt; DNS tab, and make sure that the “MagicDNS” option is enabled.</p>
+<p>Also, I changed the device name of my server (desktop computer) to something easier to remember. I changed it to “server”.</p>
+</section>
+<section id="step-4.5-test-ssh-connection-over-tailscale" class="level4">
+<h4 class="anchored" data-anchor-id="step-4.5-test-ssh-connection-over-tailscale">Step 4.5 Test SSH Connection over Tailscale</h4>
+<p>Now, you can test SSH connection over Tailscale. Suppose that my username on the server is “shunkei”, and my server device name is “mac”, then I can connect to the server from my laptop terminal with the following command:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ssh shunkei@mac</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="step-4.6-shortcut-for-connecting-to-the-remote-server" class="level4">
+<h4 class="anchored" data-anchor-id="step-4.6-shortcut-for-connecting-to-the-remote-server">Step 4.6 Shortcut for Connecting to the Remote Server</h4>
+<p>It’s cumbersome to type <code>ssh shunkei@mac</code> command every time I want to connect to the remote server through Terminal. You can set your SSH config file to create a shortcut. Open your laptop terminal, and edit the <code>~/.ssh/config</code> file (create it if it does not exist). You can open it with <code>nano</code> editor with <code>nano ~/.ssh/config</code> command (or <code>code ~/.ssh/config</code> if you want to use VS Code). Then, add the following lines:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>Host <span class="dt">&lt;</span><span class="kw">server-name</span><span class="dt">&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  HostName <span class="dt">&lt;</span><span class="kw">HostName</span><span class="dt">&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  User <span class="dt">&lt;</span><span class="kw">username</span><span class="dt">&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  IdentitiesOnly yes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You need to replace <code>&lt;server-name&gt;</code>, <code>&lt;HostName&gt;</code>, and <code>&lt;username&gt;</code> with your actual values. <code>&lt;server-name&gt;</code> is a user-defined alias for the server, and what you will type after <code>ssh</code> command. <code>&lt;HostName&gt;</code> is the machine name you set in Tailscale (e.g., <code>mac-studio</code> in my case). <code>&lt;username&gt;</code> is your username on the server (the output of <code>whoami</code> command on the server machine).</p>
+<p>For example, if <code>~/.ssh/config</code> file contains the following lines:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Host server</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  HostName mac</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  User shunkei</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  IdentitiesOnly yes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then you can simply run <code>ssh server</code> on Terminal to connect to the remote server.</p>
+<p>Congratulations! You have successfully set up SSH access to your remote server over Tailscale. You can now work on your remote server from anywhere, without being bothered by the limitations of your laptop.</p>
+<p><br></p>
+<p><br></p>
+</section>
+</section>
+</section>
+<section id="bonus" class="level2">
+<h2 class="anchored" data-anchor-id="bonus">Bonus</h2>
+<section id="opening-a-specific-project-directory-on-the-remote-server-from-the-laptop-terminal" class="level3">
+<h3 class="anchored" data-anchor-id="opening-a-specific-project-directory-on-the-remote-server-from-the-laptop-terminal">Opening a Specific Project Directory on the Remote Server from the Laptop Terminal</h3>
+<p>If you are the <code>code</code> command user to open VS Code from Terminal, like,</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>code ~/Projects/MyResearchProject</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>you can also open a specific project directory on the remote server directly from your laptop terminal.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>code --remote ssh-remote+&lt;username@hostname&gt; /Users/username/Projects/MyResearchProject</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You need to replace <code>&lt;username@hostname&gt;</code> with your actual SSH username and server address. If you have set up Tailscale and SSH config file as described above, you can use the shortcut name you defined in the SSH config file. Note that you don’t need to run <code>ssh &lt;username@hostname&gt;</code> command before <code>code</code> command.</p>
+<p>For example, if you defined <code>server</code> as the shortcut name, then you can run:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>code --remote ssh-remote+server /Users/username/Projects/MyResearchProject</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You should see that VS Code opens the specified project directory on the remote server.</p>
+<p><br></p>
+</section>
+<section id="using-tmux-for-persistent-sessions-optional" class="level3">
+<h3 class="anchored" data-anchor-id="using-tmux-for-persistent-sessions-optional">Using <code>tmux</code> for Persistent Sessions (Optional)</h3>
+<p>Now that you have SSH access to your remote server, you might want to consider using <code>tmux</code>, a terminal multiplexer that allows you to create persistent terminal sessions. I will talk about <code>tmux</code> in more detail in another post.</p>
+<!-- ### Further Security Considerations
+
+If you want to enhance the security of your SSH setup, tailscale is a good option to consider. Tailscale is a zero-configuration VPN that makes it easy to create secure connections between your devices over the internet. By using Tailscale, you can ensure that your SSH connections are encrypted and protected from potential eaves -->
+<p><br></p>
+<p><br></p>
+</section>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li><a href="https://code.visualstudio.com/docs/remote/ssh">Remote Development using SSH - Visual Studio Code</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Remote - SSH</a></li>
+<li><a href="https://tailscale.com/kb/1017/install?utm_source=chatgpt.com">Tailscale quickstart</a></li>
+</ul>
+
+
+</section>
+
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>SSH is a cryptographic network protocol that allows a user to securely access and control a remote computer over a network<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>For highly interactive or graphics-heavy tasks, it may behave differently<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p><strong>At this point, you may wonder whether this is similar to controlling the remote machine’s screen. It is not.</strong> This setup is different from traditional remote desktop tools that “mirror” the screen of another computer. Here, you are not streaming the entire graphical interface; instead, you are securely connecting to the remote machine and working directly with files and commands there. That is why this approach often feels fast and responsive for coding and data analysis.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>At a high level, SSH allows one computer to open a secure command-line session on another computer over a network. Once this connection is established, commands typed on the laptop are executed on the desktop computer, and the results are sent back to the laptop. From the user’s perspective, it feels similar to working directly on the desktop machine, except that everything happens through a network connection.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2025 Shunkei Kakimoto</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

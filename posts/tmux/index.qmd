@@ -1,0 +1,9 @@
+---
+title: "**iTerm2 + tmux Setup Guide (under construction)**"
+description: "Why I found this setup useful and how to set it up."
+# date: 2026-01-16
+number-sections: false
+image: iterm.png
+categories: [tmux, iterm2, terminal, macOS]
+---
+

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>teaching – Shunkei Kakimoto</title>
+<title>Posts – Shunkei Kakimoto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +23,26 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./assets/image/favicon.ico" rel="icon">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ef670381d910e699fba524742e2a649e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../assets/image/favicon.ico" rel="icon">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-ef670381d910e699fba524742e2a649e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,6 +70,63 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-blogposts .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-blogposts'] = new List('listing-blogposts', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-r .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-r'] = new List('listing-r', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z70HE9F4JL"></script>
 
 <script type="text/javascript">
@@ -80,9 +137,39 @@ gtag('js', new Date());
 gtag('config', 'G-Z70HE9F4JL', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="Shunkei Kakimoto">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Posts – Shunkei Kakimoto">
 <meta property="og:description" content="">
+<meta property="og:image" content="../posts/tmux/iterm.png">
 <meta property="og:site_name" content="Shunkei Kakimoto">
 </head>
 
@@ -93,7 +180,7 @@ gtag('config', 'G-Z70HE9F4JL', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Shunkei Kakimoto</span>
     </a>
   </div>
@@ -104,27 +191,27 @@ gtag('config', 'G-Z70HE9F4JL', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> <i class="bi bi-person-circle" role="img">
+    <a class="nav-link" href="../index.html"> <i class="bi bi-person-circle" role="img">
 </i> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./research.html"> <i class="bi bi-journals" role="img">
+    <a class="nav-link" href="../research.html"> <i class="bi bi-journals" role="img">
 </i> 
 <span class="menu-text">Research &amp; Talks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./teaching.html" aria-current="page"> <i class="bi bi-mortarboard" role="img">
+    <a class="nav-link" href="../teaching.html"> <i class="bi bi-mortarboard" role="img">
 </i> 
 <span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./posts/index.html"> <i class="bi bi-pencil-square" role="img">
+    <a class="nav-link active" href="../posts/index.html" aria-current="page"> <i class="bi bi-pencil-square" role="img">
 </i> 
 <span class="menu-text">Posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./CV.html"> <i class="bi bi-file-earmark-check" role="img">
+    <a class="nav-link" href="../CV.html"> <i class="bi bi-file-earmark-check" role="img">
 </i> 
 <span class="menu-text">CV</span></a>
   </li>  
@@ -147,90 +234,143 @@ gtag('config', 'G-Z70HE9F4JL', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul class="collapse">
-  <li><a href="#teaching-experience" id="toc-teaching-experience" class="nav-link active" data-scroll-target="#teaching-experience"><i class="fa-solid fa-pencil" aria-label="pencil"></i> Teaching Experience</a>
-  <ul class="collapse">
-  <li><a href="#teaching-instructor" id="toc-teaching-instructor" class="nav-link" data-scroll-target="#teaching-instructor">Teaching Instructor</a></li>
-  <li><a href="#teaching-assistant" id="toc-teaching-assistant" class="nav-link" data-scroll-target="#teaching-assistant">Teaching Assistant</a></li>
-  </ul></li>
-  <li><a href="#teaching-philosophy" id="toc-teaching-philosophy" class="nav-link" data-scroll-target="#teaching-philosophy"><i class="fa-solid fa-scroll" aria-label="scroll"></i> Teaching Philosophy</a>
-  <ul class="collapse">
-  <li><a href="#recognitions" id="toc-recognitions" class="nav-link" data-scroll-target="#recognitions">Recognitions</a></li>
-  </ul></li>
+  <ul>
+  <li><a href="#memorandums" id="toc-memorandums" class="nav-link active" data-scroll-target="#memorandums">Memorandums</a></li>
+  <li><a href="#r-programming" id="toc-r-programming" class="nav-link" data-scroll-target="#r-programming">R programming</a></li>
+  <li><a href="#book-notes" id="toc-book-notes" class="nav-link" data-scroll-target="#book-notes">Book Notes</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-page-left" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Posts</h1>
+</div>
 
 
 
+<div class="quarto-title-meta column-page-left">
 
-<section id="teaching-experience" class="level1">
-<h1><i class="fa-solid fa-pencil" aria-label="pencil"></i> Teaching Experience</h1>
-<section id="teaching-instructor" class="level2">
-<h2 class="anchored" data-anchor-id="teaching-instructor">Teaching Instructor</h2>
-<ul>
-<li>Applied R Programming Review Course, Ph.D.&nbsp;(University of Minnesota, summer 2024)
-<ul>
-<li>Designed and taught a review course for Ph.D.&nbsp;students in Applied Economics and the Humphrey School of Public Affairs on R programming and data analysis.</li>
-<li>The course website is available <a href="https://shunkei3.github.io/R-2024-Summer"><strong><i class="fa-solid fa-laptop-code" aria-label="laptop-code"></i> here</strong></a>.</li>
-</ul></li>
-</ul>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="memorandums" class="level2">
+<h2 class="anchored" data-anchor-id="memorandums">Memorandums</h2>
+<div id="listing-blogposts" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-2">
+<div class="g-col-1" data-index="0" data-categories="dG11eCUyQ2l0ZXJtMiUyQ3Rlcm1pbmFsJTJDbWFjT1M=" data-listing-file-modified-sort="1768694678673" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<a href="../posts/tmux/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="../posts/tmux/iterm.png" class="thumbnail-image card-img" style="height: 280px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+<strong>iTerm2 + tmux Setup Guide (under construction)</strong>
+</h5>
+<div class="card-text listing-description delink">
+<p>Why I found this setup useful and how to set it up.</p>
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="c3NoJTJDdnNjb2RlJTJDcmVtb3RlLWRldmVsb3BtZW50JTJDdGVybWluYWw=" data-listing-date-sort="1768024800000" data-listing-file-modified-sort="1768776379266" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2648">
+<a href="../posts/ssh-server-setup/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="../posts/ssh-server-setup/ssh_image1.png" class="thumbnail-image card-img" style="height: 280px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+<strong>Using SSH to Access the Power of a Desktop Workstation from a Laptop</strong>
+</h5>
+<div class="card-text listing-description delink">
+<p>SSH provides a practical way to access the resources of a powerful desktop workstation from a laptop. This post explains why this works and how to set it up.</p>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+
+</div>
+<div class="listing-date">
+Jan 10, 2026
+</div>
+</div>
+</div>
+</div></a>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
 <p><br></p>
 </section>
-<section id="teaching-assistant" class="level2">
-<h2 class="anchored" data-anchor-id="teaching-assistant">Teaching Assistant</h2>
-<section id="university-of-minnesota" class="level3">
-<h3 class="anchored" data-anchor-id="university-of-minnesota"><em>University of Minnesota</em></h3>
+<section id="r-programming" class="level2">
+<h2 class="anchored" data-anchor-id="r-programming">R programming</h2>
+<p>R (and Quarto) is my primary tools for my academic research. I use R for:</p>
 <ul>
-<li>Principles of Microeconomics (APEC 1101), Undergraduate (Fall 2024)</li>
-<li>Applied Microeconomic Analysis of Social Choice and Welfare (APEC 8004), Ph.D.&nbsp;(Spring 2024)</li>
-<li>Applied Microeconomic Analysis of Game Theory and Information (APEC 8003), Ph.D.&nbsp;(Spring 2024)</li>
-<li>Econometric Analysis I (APEC 8211), Ph.D.&nbsp;(Fall 2023)</li>
-<li>Econometric Analysis II (APEC 8212), Ph.D.&nbsp;(Fall 2023)</li>
+<li>data wrangling, statistical analysis and visualization, and goespatial analysis.</li>
+<li>integrating Python script and functions within R script using the <code>reticulate</code> package for specific tasks</li>
+<li>writing reproducible research documents such as academic papers, reports, and presentation slides in combination with Quarto and some VS code extensions (e.g., citation picker for Zotero).</li>
 </ul>
-</section>
-<section id="university-of-nebraska-lincoln" class="level3">
-<h3 class="anchored" data-anchor-id="university-of-nebraska-lincoln"><em>University of Nebraska-Lincoln</em></h3>
-<ul>
-<li>AECN 896-003 Applied Econometrics, M.S. (Fall 2020, Spring 2022)</li>
-</ul>
+<p><strong>Here, I share my experience of learning R and some useful resources that helped me along the way.</strong></p>
+<div id="listing-r" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-2">
+<div class="g-col-1" data-index="0" data-listing-date-sort="1768543200000" data-listing-file-modified-sort="1768776608689" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="417">
+<a href="../posts/r-intro/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="../posts/r-intro/r_image.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+<strong>Mini Course: Introduction to R Programming</strong>
+</h5>
+<div class="card-text listing-description delink">
+<p>A beginner’s guide to R programming language</p>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+
+</div>
+<div class="listing-date">
+Jan 16, 2026
+</div>
+</div>
+</div>
+</div></a>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
 <p><br></p>
 </section>
-</section>
-</section>
-<section id="teaching-philosophy" class="level1">
-<h1><i class="fa-solid fa-scroll" aria-label="scroll"></i> Teaching Philosophy</h1>
-<p>I have served as a teaching assistant for various courses in Applied Economics. My main duties included leading weekly discussion sessions, creating and grading assignments, and holding office hours.</p>
-<p>I lead my discussion sessions with a single motto: <em>knowing is different from understanding</em>. Although this sounds obvious, I think it is a critical insight for learning something. I tend to feel I understand the material after I go to lectures. However, once I face complicated questions in the problem set, I often find myself unable to figure out where to start thinking and how to apply the knowledge to approach the problems. This is a typical situation where I know the concepts but do not understand them. Whenever I encounter this situation, I fill in the argument that I missed to bridge my knowledge to the concepts I want to understand by reading related research articles or textbooks. From this, I learned that knowing a mathematical formula or concept as written is not the whole point of learning. Rather, understanding the concept together with its background, such as why it matters, for what kind of problem the concept is useful, and how it connects to other concepts, is important.</p>
-<p>In this light, in my discussion sessions, I remind students, “Do you really understand the material?” by asking basic questions and attempting to walk through in-depth arguments to aid them in applying the concepts. For example, in an econometric analysis class, although the definition of the sampling distribution is not difficult, when it comes to the question of why it is important to understand the sampling distribution, most of the students get stuck. To help them understand this point, I worked through a simple exercise with students to explain it step-by-step. Once students understand the foundation of the concepts, they will be able to correctly apply them to solve problem sets, which in turn leads to higher confidence and motivation to learn more. With the same spirit, whenever I give feedback to students on their assignments, I attempt to clarify why they got the wrong conclusion by suggesting the points that students missed or misunderstood.</p>
-<p>Although I value the fundamental understanding of the concepts in my discussion sessions, I also try to avoid having students focus too much on the details and lose sight of the broader picture. Students are often required to cover many topics in a short period. Thus, they tend to be lost in what they are doing and how it is connected to the topics they learned previously. To address this, I periodically step back to highlight the overall structure of the material so that students understand where they are and how the topics fit together.</p>
-<p>I believe this approach has helped students engage more meaningfully with the material — a contribution that has been recognized by the following teaching awards and nominations:</p>
-<section id="recognitions" class="level2">
-<h2 class="anchored" data-anchor-id="recognitions">Recognitions</h2>
-<ul>
-<li><strong>CFANS Graduate Assistant Teaching Award (2025)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></strong> - College of Food, Agricultural and Natural Resource Sciences, UMN</li>
-<li><strong>Nominated for AAEA TLC Graduate Student Teaching Award (2024)<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></strong> – by Professor Frances Homans, UMN</li>
-<li><strong>Teaching Assistant Award for 5000/8000 Level Classes<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> (2023-2024)</strong> - Department of Applied Economics, UMN</li>
-</ul>
+<section id="book-notes" class="level2">
+<h2 class="anchored" data-anchor-id="book-notes">Book Notes</h2>
+<div id="booknotes">
+
+</div>
+
 
 
 </section>
-</section>
 
-
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>For teaching <em>APEC 1101: Principles of Microeconomics</em>. This award recognizes outstanding teaching assistants for undergraduate courses in the College of Food, Agricultural and Natural Resource Sciences (CFANS), which consists of various departments including Applied Economics, Animal Science, Food Science etc.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>For teaching Ph.D.&nbsp;level courses <em>APEC 8211–8212: Econometrics I &amp; II</em><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>For teaching Ph.D.&nbsp;level courses <em>APEC 8211–8212: Econometrics I &amp; II</em> and <em>APEC 8003-8004: Applied Microeconomic Analysis</em><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

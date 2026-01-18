@@ -1,0 +1,35 @@
+---
+title: "**Mini Course: Introduction to R Programming**"
+description: "A beginner's guide to R programming language"
+date: 2026-01-16
+number-sections: false
+image: r_image.png
+---
+
+## Introduction
+
+When I first started learning R during my undergraduate econometrics coursework, I found it whimsical yet challenging to use, and I was not motivated to pursue it further. The major turning point in my R journey came when I started graduate school and began working as a research assistant under my advisor, Taro. Since then, my initial impression—that R code is cluttered and requires repetitive tasks—was completely overturned.
+
+***One lesson I learned from my early experience with R is that choosing the right learning resources is crucial for mastering the language effectively*** (and I believe this applies to learning any programming language). In my case, I was fortunate to learn R through [**{{< fa laptop-code >}} Taro’s courses**](https://github.com/tmieno2) and related research projects. I was exposed to a wide range of well-structured and clean R scripts, which significantly improve my learning experience. 
+
+***The goal of this mini-course is to share my experience learning R, highlight useful resources that helped me along the way, and provide a structured path for beginners to get started with R programming.*** The original materials for this mini-course were developed for incoming PhD students in the Applied Economics program and the Humphrey School of Public Affairs at the University of Minnesota in Summer 2024. For each lecture, I created both lecture slides and hands-on exercises to help students practice the concepts covered.
+
+A unique feature of this mini-course is that all code examples can be run directly in your web browser^[This is implemented using Quarto and the [`webr`](https://github.com/r-wasm/webr) package.]. This allows you to tweak the code and see the results immediately. This feature may be especially helpful for beginners who want to run code line by line and understand how each component works—without the hassle of copying and pasting code into a local R environment—or for those who simply want to modify parameters and observe how the output changes. I received positive feedback from students who took the course, many of whom noted that this functionality made it easier to follow the lectures and practice R programming.
+
+Of course, I recommend you to set up R and RStudio on your local machine and practice R programming there as well. To install R and Rstudio, you can follow [{{< fa link >}} this instruction](https://posit.co/download/rstudio-desktop/).
+
+## Let's get started!
+
+**You can access the website from [**{{< fa laptop-code >}} here**](https://shunkei3.github.io/R-2024-Summer). I will keep updating the materials as I receive feedback from students and improve the content.**
+
+<br>
+
+Quick view of the course website:
+
+```{=html}
+<div style="display: flex; justify-content: center;"> 
+<iframe width="900" height="800" src="https://shunkei3.github.io/R-2024-Summer/contents/index.html" title="Webpage example"></iframe>
+</div>
+```
+
+

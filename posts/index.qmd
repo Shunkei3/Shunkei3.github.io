@@ -1,0 +1,51 @@
+---
+title: "Posts"
+toc: true
+listing:
+  - id: blogposts
+    contents: 
+      - "ssh-server-setup"
+      - "tmux"
+    sort: "date desc"
+    type: grid
+    categories: false
+    image-height: 280px
+    grid-columns: 2
+  - id: r
+    contents:
+      - "r-intro"
+    sort: "date desc"
+    type: grid
+    categories: false
+    image-height: 150px
+    grid-columns: 2
+  # - id: booknotes # not for now
+---
+
+## Memorandums
+
+:::{#blogposts}
+:::
+
+<br>
+
+## R programming
+
+R (and Quarto) is my primary tools for my academic research. I use R for:
+
++ data wrangling, statistical analysis and visualization, and goespatial analysis. 
++ integrating Python script and functions within R script using the `reticulate` package for specific tasks
++ writing reproducible research documents such as academic papers, reports, and presentation slides in combination with Quarto and some VS code extensions (e.g., citation picker for Zotero).
+
+**Here, I share my experience of learning R and some useful resources that helped me along the way.**
+
+:::{#r}
+:::
+
+<br>
+
+## Book Notes
+
+:::{#booknotes}
+:::
+
