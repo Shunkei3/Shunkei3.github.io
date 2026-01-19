@@ -14,6 +14,9 @@ website:
   page-navigation: true
   back-to-top-navigation: true
   google-analytics: G-Z70HE9F4JL
+  site-url: "https://shunkei3.github.io"
+  site-path: "/"
+  search: true
   navbar:
     left:
       - href: index.qmd

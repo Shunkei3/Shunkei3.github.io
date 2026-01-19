@@ -83,7 +83,7 @@ gtag('config', 'G-Z70HE9F4JL', { 'anonymize_ip': true});
 
 <meta property="og:title" content="Shunkei Kakimoto">
 <meta property="og:description" content="柿元俊慧（Shunkei Kakimoto, かきもと　しゅんけい) - ミネソタ大学 応用経済学 博士課程">
-<meta property="og:image" content="assets/image/Shun-0071-small.jpg">
+<meta property="og:image" content="https://shunkei3.github.io/assets/image/Shun-0071-small.jpg">
 <meta property="og:site_name" content="Shunkei Kakimoto">
 </head>
 
@@ -313,7 +313,7 @@ gtag('config', 'G-Z70HE9F4JL', { 'anonymize_ip': true});
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/shunkei3\.github\.io");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
