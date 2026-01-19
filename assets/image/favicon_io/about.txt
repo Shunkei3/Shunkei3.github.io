@@ -1,6 +1,6 @@
 This favicon was generated using the following font:
 
-- Font Title: Roboto
+- Font Title: Lora
 - Font Author: undefined
-- Font Source: https://fonts.gstatic.com/s/roboto/v48/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbWmTggvWl0Qn.ttf
+- Font Source: https://fonts.gstatic.com/s/lora/v36/0QI6MX1D_JOuGQbT0gvTJPa787weuyJGmKxemMeZ.ttf
 - Font License: undefined)
