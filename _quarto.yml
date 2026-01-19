@@ -15,7 +15,6 @@ website:
   back-to-top-navigation: true
   google-analytics: G-Z70HE9F4JL
   site-url: "https://shunkei3.github.io"
-  site-path: "/"
   search: true
   navbar:
     left:
@@ -42,7 +41,6 @@ site-metadata:
   description: "柿元俊慧 (Shunkei Kakimoto, かきもと しゅんけい) - ミネソタ大学 応用経済学 博士課程"
   keywords: ["柿元俊慧", "ミネソタ大学", "カキモトシュンケイ", "かきもと しゅんけい", "Shunkei Kakimoto"]
 
-    
 format:
   html:
     page-layout: full
