@@ -62,10 +62,13 @@ authors <- sapply(bib, function(entry) {
 
 + I am interested in agricultural irrigation and the behavioral mechanisms underlying farmers' decisions to adopt water-saving technologies or conservation practices. While advanced irrigation technologies have the potential to reduce water consumption without compromising agricultural productivity or farmer welfare, their adoption can sometimes lead to unintended consequences — including increased total water use and accelerated resource depletion. This project builds on a theoretical framework to empirically examine the heterogeneous effects of modern irrigation technology adoption on farmers’ water use and productivity. It also explores the behavioral mechanisms that drive these outcomes.
 
+<br>
 
 *Gallagher, N. and **Kakimoto, S.** "Yield Response to Nitrogen in Agricultural Production Models"*
 
 + This project proposes a new modeling framework for agricultural production in Minnesota. The innovation lies in incorporating nitrogen yield response directly into the land allocation model. This approach enables more realistic adjustments in both nitrogen application rates and land use decisions in response to changes in nitrogen fertilizer prices and crop prices — a critical feature for evaluating alternative policy strategies aimed at reducing nitrogen pollution in the state.
+
+<br>
 
 ***Kakimoto, S.** and Mieno, T. "Size and the Nature of Measurement Error in Gridded Weather Datasets and its Consequential Estimation Bias in Regression Model: an Application to PRISM Datasets for the US Midwest Regions"*
 

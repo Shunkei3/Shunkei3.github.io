@@ -77,7 +77,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-ef670381d910e699fba524742e2a649e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-ea91fe063b863f2cf89356ebd31493bb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -277,7 +277,7 @@ gtag('config', 'G-Z70HE9F4JL', { 'anonymize_ip': true});
 
 <!-- ssh: Secure Shell protocol -->
 <!-- I want to insert an picture here -->
-<p><img src="ssh_image1.png" class="img-fluid" alt="SSH Architecture" width="800"></p>
+<!-- ![](ssh_image1.png){fig-alt="SSH Architecture" width="800"} -->
 <p><br></p>
 <section id="target-audience" class="level2">
 <h2 class="anchored" data-anchor-id="target-audience">Target Audience</h2>
@@ -305,11 +305,17 @@ gtag('config', 'G-Z70HE9F4JL', { 'anonymize_ip': true});
 <h3 class="anchored" data-anchor-id="basic-idea-how-ssh-fits-in">Basic idea &amp; How SSH fits in</h3>
 <p>In my setup, the desktop computer acts as the machine where all computation and data live, while the laptop serves primarily as an interface for accessing and controlling that machine. Rather than copying files back and forth or trying to keep multiple machines in sync, I treat the desktop computer as the single place where my research environment exists.</p>
 <p>In more technical terms, the desktop computer functions as a <strong>server</strong> that is always available on my home network, while the laptop acts as a <strong>client</strong> that connects to it on demand. When the two are connected, the laptop sends commands to the desktop computer, all computation happens on the desktop machine, and the results are sent back to the laptop for display.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-<p>Because this communication happens over a network, it needs to be secure and private. This is where SSH comes in. SSH provides a secure way for the laptop to connect to the desktop computer and communicate with it without exposing the connection to others on the network.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<p><strong>Because this communication happens over a network, it needs to be secure and private. This is where SSH comes in.</strong> SSH provides a secure way for the laptop to connect to the desktop computer and communicate with it without exposing the connection to others on the network.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="server_client.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="600"></p>
+</figure>
+</div>
+<p><br></p>
 </section>
 <section id="why-vs-code-remote-ssh-matters" class="level3">
 <h3 class="anchored" data-anchor-id="why-vs-code-remote-ssh-matters">Why VS Code Remote SSH matters</h3>
-<p>While SSH alone is sufficient for running commands and managing files, when you are coding through VS Code, VS Code Remote SSH extension is what makes this setup truly practical for coding and data analysis. It allows the VS Code interface on my laptop to connect to a full development environment running on the remote desktop computer. Extensions that are relevant to coding and execution run on the remote machine, while the editor interface remains local. Instead of merely accessing files, I can open remote project directories directly in VS Code, edit code, run scripts, use the integrated terminal, and take advantage of language features such as autocomplete and debugging—all operating in the remote environment where the data and computation reside. From the user’s perspective, the editor behaves just like local VS Code, even though all IDE functionality runs on the desktop machine.</p>
+<p><strong>While SSH alone is sufficient for running commands and managing files, when you are coding through VS Code, VS Code Remote SSH extension is what makes this setup truly practical for coding and data analysis.</strong> It allows the VS Code interface on my laptop to connect to a full development environment running on the remote desktop computer. Extensions that are relevant to coding and execution run on the remote machine, while the editor interface remains local. Instead of merely accessing files, I can open remote project directories directly in VS Code, edit code, run scripts, use the integrated terminal, and take advantage of language features such as autocomplete and debugging—all operating in the remote environment where the data and computation reside. From the user’s perspective, the editor behaves just like local VS Code, even though all IDE functionality runs on the desktop machine.</p>
 <p>For more details about the VS Code Remote SSH extension, please refer to the official documentation: <a href="https://code.visualstudio.com/docs/remote/ssh">Remote Development using SSH - Visual Studio Code</a>.</p>
 </section>
 </section>
