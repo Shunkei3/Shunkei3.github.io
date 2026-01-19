@@ -9,7 +9,6 @@ metadata-files: [assets/misc/metadata.yml]
 website:
   title: "Shunkei Kakimoto"
   favicon: assets/image/favicon.ico
-  # favicon: assets/image/favicon.png
   open-graph: true
   page-footer: "© 2025 Shunkei Kakimoto"
   page-navigation: true
@@ -44,8 +43,8 @@ site-metadata:
 format:
   html:
     page-layout: full
-    fontsize: 20px
+    fontsize: 18px
     theme: assets/css/theme.scss
-    mainfont: Roboto
+    # mainfont: Work Sans
     toc: true
 
