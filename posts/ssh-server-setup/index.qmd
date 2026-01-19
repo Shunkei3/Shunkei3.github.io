@@ -12,7 +12,7 @@ toc-depth: 4
 
 <!-- I want to insert an picture here -->
 
-![](ssh_image1.png){fig-alt="SSH Architecture" width="800"}
+<!-- ![](ssh_image1.png){fig-alt="SSH Architecture" width="800"} -->
 
 <br>
 
@@ -54,12 +54,15 @@ In my setup, the desktop computer acts as the machine where all computation and 
 
 In more technical terms, the desktop computer functions as a **server** that is always available on my home network, while the laptop acts as a **client** that connects to it on demand. When the two are connected, the laptop sends commands to the desktop computer, all computation happens on the desktop machine, and the results are sent back to the laptop for display.^[**At this point, you may wonder whether this is similar to controlling the remote machine’s screen. It is not.** This setup is different from traditional remote desktop tools that "mirror" the screen of another computer. Here, you are not streaming the entire graphical interface; instead, you are securely connecting to the remote machine and working directly with files and commands there. That is why this approach often feels fast and responsive for coding and data analysis.]
 
-Because this communication happens over a network, it needs to be secure and private. This is where SSH comes in. SSH provides a secure way for the laptop to connect to the desktop computer and communicate with it without exposing the connection to others on the network.^[At a high level, SSH allows one computer to open a secure command-line session on another computer over a network. Once this connection is established, commands typed on the laptop are executed on the desktop computer, and the results are sent back to the laptop. From the user’s perspective, it feels similar to working directly on the desktop machine, except that everything happens through a network connection.]
+**Because this communication happens over a network, it needs to be secure and private. This is where SSH comes in.** SSH provides a secure way for the laptop to connect to the desktop computer and communicate with it without exposing the connection to others on the network.^[At a high level, SSH allows one computer to open a secure command-line session on another computer over a network. Once this connection is established, commands typed on the laptop are executed on the desktop computer, and the results are sent back to the laptop. From the user’s perspective, it feels similar to working directly on the desktop machine, except that everything happens through a network connection.]
 
+![](server_client.png){fig-align="center" width="600"}
+
+<br>
 
 ### Why VS Code Remote SSH matters
 
-While SSH alone is sufficient for running commands and managing files, when you are coding through VS Code, VS Code Remote SSH extension is what makes this setup truly practical for coding and data analysis. It allows the VS Code interface on my laptop to connect to a full development environment running on the remote desktop computer. Extensions that are relevant to coding and execution run on the remote machine, while the editor interface remains local. Instead of merely accessing files, I can open remote project directories directly in VS Code, edit code, run scripts, use the integrated terminal, and take advantage of language features such as autocomplete and debugging—all operating in the remote environment where the data and computation reside. From the user’s perspective, the editor behaves just like local VS Code, even though all IDE functionality runs on the desktop machine.
+**While SSH alone is sufficient for running commands and managing files, when you are coding through VS Code, VS Code Remote SSH extension is what makes this setup truly practical for coding and data analysis.** It allows the VS Code interface on my laptop to connect to a full development environment running on the remote desktop computer. Extensions that are relevant to coding and execution run on the remote machine, while the editor interface remains local. Instead of merely accessing files, I can open remote project directories directly in VS Code, edit code, run scripts, use the integrated terminal, and take advantage of language features such as autocomplete and debugging—all operating in the remote environment where the data and computation reside. From the user’s perspective, the editor behaves just like local VS Code, even though all IDE functionality runs on the desktop machine.
 
 For more details about the VS Code Remote SSH extension, please refer to the official documentation: [Remote Development using SSH - Visual Studio Code](https://code.visualstudio.com/docs/remote/ssh).
 
