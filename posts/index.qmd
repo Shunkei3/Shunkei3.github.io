@@ -14,6 +14,7 @@ listing:
   - id: r
     contents:
       - "r-intro"
+      - "reproducible-research"
     sort: "date desc"
     type: grid
     categories: false
@@ -29,7 +30,7 @@ listing:
 
 <br>
 
-## R programming
+## R programming and Quarto
 
 R (and Quarto) is my primary tools for my academic research. I use R for:
 
@@ -45,6 +46,13 @@ R (and Quarto) is my primary tools for my academic research. I use R for:
 <br>
 
 ## Book Notes
+::: {layout-ncol=2}
+![](book/AgEnvResEcon.png)
+<!-- 
+![](book/commodity.png){height=1in} -->
+:::
+
+
 
 :::{#booknotes}
 :::

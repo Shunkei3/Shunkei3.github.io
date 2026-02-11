@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://shunkei3.github.io/z_others/ToDo.html</loc>
-    <lastmod>2026-01-16T18:52:02.528Z</lastmod>
+    <loc>https://shunkei3.github.io/z_others/Ideas/Econ_Reproducibility.html</loc>
+    <lastmod>2026-02-04T02:06:30.555Z</lastmod>
   </url>
   <url>
-    <loc>https://shunkei3.github.io/index.html</loc>
-    <lastmod>2026-01-19T17:04:08.099Z</lastmod>
+    <loc>https://shunkei3.github.io/z_others/vim_settings.html</loc>
+    <lastmod>2026-01-21T04:23:22.950Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shunkei3.github.io/CV.html</loc>
+    <lastmod>2025-08-06T06:41:02.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shunkei3.github.io/posts/reproducible-research/index.html</loc>
+    <lastmod>2026-01-23T22:21:33.000Z</lastmod>
   </url>
   <url>
     <loc>https://shunkei3.github.io/posts/index.html</loc>
-    <lastmod>2026-01-18T22:58:31.745Z</lastmod>
+    <lastmod>2026-01-22T18:18:48.000Z</lastmod>
   </url>
   <url>
     <loc>https://shunkei3.github.io/posts/ssh-server-setup/index.html</loc>
-    <lastmod>2026-01-19T00:54:56.621Z</lastmod>
+    <lastmod>2026-02-10T23:35:04.477Z</lastmod>
   </url>
   <url>
     <loc>https://shunkei3.github.io/teaching.html</loc>
@@ -30,10 +38,18 @@
   </url>
   <url>
     <loc>https://shunkei3.github.io/posts/tmux/index.html</loc>
-    <lastmod>2026-01-18T00:04:38.673Z</lastmod>
+    <lastmod>2026-02-11T00:42:52.092Z</lastmod>
   </url>
   <url>
-    <loc>https://shunkei3.github.io/CV.html</loc>
-    <lastmod>2025-08-06T06:49:42.656Z</lastmod>
+    <loc>https://shunkei3.github.io/index.html</loc>
+    <lastmod>2026-01-19T17:03:32.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shunkei3.github.io/z_others/ToDo.html</loc>
+    <lastmod>2026-01-16T18:52:02.528Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shunkei3.github.io/z_others/post_tmux/index.html</loc>
+    <lastmod>2026-01-22T18:04:46.000Z</lastmod>
   </url>
 </urlset>

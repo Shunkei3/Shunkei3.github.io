@@ -1,9 +1,24 @@
 ---
-title: "**iTerm2 + tmux Setup Guide (under construction)**"
-description: "Why I found this setup useful and how to set it up."
+title: "**tmux Setup Guide with Alacritty Terminal Emulator** (comming soon)"
+description: "tmux and Alacritty provide a persistent and reliable terminal workflow for data analysis, both locally and remotely. This post explains what they are and why they are useful."
 # date: 2026-01-16
 number-sections: false
-image: iterm.png
-categories: [tmux, iterm2, terminal, macOS]
+image: top_picture.png
+categories: [tmux, terminal, ssh]
 ---
 
+
+This post might be useful for:
+
++ *Vim users who want a more efficient terminal workflow.*
++ *Researchers who work across local and remote machines and want consistent terminal sessions.*
++ *Occasional terminal users who is interested in learning about terminal multiplexers and modern terminal emulators.*
++ *Data analysts and programmers who run long-running tasks and want to avoid losing work due to disconnections.*
+
+Especially, if you establish ssh with remote and local server, which I explained how to do that in my previous post, having termial multiplexer like tmux is a life saver. You can start a tmux session on the remote server, run your commands, and even if your ssh connection drops, your tmux session will continue running in the background. When you reconnect, you can simply reattach to your tmux session and pick up right where you left off. This is particularly beneficial for long-running tasks.
+
+
+Let me back up a bit and explain what tmux and Alacritty are, and why they are useful.
+
+
+...

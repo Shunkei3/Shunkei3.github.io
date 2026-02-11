@@ -20,7 +20,7 @@ toc-depth: 4
 
 **This post is aimed at researchers who run real computational workloads but do not have formal training in system administration or software engineering.** Especially, if you own multiple computers, such as a powerful desktop workstation and a lightweight laptop, and have wondered about the following questions, this post might be useful for you:
 
-+ ***"Can I utilize the CPU, memory, and storage of my desktop computer in my home while working remotely—for example, from my university office or a library?"***
++ ***"Can I utilize the CPU, memory, and storage of my desktop computer in my home while working remotely on my laptop—for example, from my university office or a library?"***
 
 + ***"Can I work with datasets stored on my desktop computer without downloading or copying them to my laptop? I also don't like to carry around large external hard drives."***
 
@@ -37,7 +37,7 @@ Being able to seamlessly access and utilize resources of a more powerful machine
 
 ## Background of My Situation
 
-I use two machines for my research work. One is a relatively powerful desktop computer, a Mac Studio, that I mainly use at home. It is the most powerful (and expensive) machine I have ever owned. The other is a lightweight laptop, a ThinkPad running Linux (Ubuntu), which I use when working from my university office, the library, or elsewhere.
+I use two machines for my research work. One is a relatively powerful desktop computer, a Mac Studio, that I mainly use at home. It is the most powerful (and expensive) machine I have ever owned. The other is a lightweight laptop, a ThinkPad running Linux (Debian13), which I use when working from my university office, the library, or elsewhere.
 
 Whenever I worked on my laptop, the same questions kept coming back to me: how could I best utilize the power of my desktop computer while I was away from home? My laptop has limited storage and computing capacity, while my desktop has abundant resources that often sat idle simply because I was not physically in front of it.
 
@@ -200,7 +200,7 @@ On the server (your desktop computer), follow these steps:
 + Open Terminal, and run `tailscale status` to verify that Tailscale is running.
 
 #### Step 4.3 Set up Tailscale on the Client
-On the client (your laptop), follow similar steps. I am using Ubuntu on my laptop, so I followed [the instructions for Linux on Tailscale website](https://tailscale.com/download/linux). I simply ran the codes illustrated there. 
+On the client (your laptop), follow similar steps. I am using Linux on my laptop, so I followed [the instructions for Linux on Tailscale website](https://tailscale.com/download/linux). I simply ran the codes illustrated there. 
 
 Open Tailscale admin console, and verify that both your server and client devices are listed there.
 

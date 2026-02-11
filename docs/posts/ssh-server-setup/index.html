@@ -285,7 +285,7 @@ gtag('config', 'G-Z70HE9F4JL', { 'anonymize_ip': true});
 <h2 class="anchored" data-anchor-id="target-audience">Target Audience</h2>
 <p><strong>This post is aimed at researchers who run real computational workloads but do not have formal training in system administration or software engineering.</strong> Especially, if you own multiple computers, such as a powerful desktop workstation and a lightweight laptop, and have wondered about the following questions, this post might be useful for you:</p>
 <ul>
-<li><p><strong><em>“Can I utilize the CPU, memory, and storage of my desktop computer in my home while working remotely—for example, from my university office or a library?”</em></strong></p></li>
+<li><p><strong><em>“Can I utilize the CPU, memory, and storage of my desktop computer in my home while working remotely on my laptop—for example, from my university office or a library?”</em></strong></p></li>
 <li><p><strong><em>“Can I work with datasets stored on my desktop computer without downloading or copying them to my laptop? I also don’t like to carry around large external hard drives.”</em></strong></p></li>
 <li><p><strong><em>“Can I monitor progress and diagnose errors in long-running jobs without sitting in front of my desktop machine?”</em></strong></p></li>
 <li><p><strong><em>“Is there a way to avoid constantly worrying about the storage and performance limits of my laptop?”</em></strong></p></li>
@@ -296,7 +296,7 @@ gtag('config', 'G-Z70HE9F4JL', { 'anonymize_ip': true});
 </section>
 <section id="background-of-my-situation" class="level2">
 <h2 class="anchored" data-anchor-id="background-of-my-situation">Background of My Situation</h2>
-<p>I use two machines for my research work. One is a relatively powerful desktop computer, a Mac Studio, that I mainly use at home. It is the most powerful (and expensive) machine I have ever owned. The other is a lightweight laptop, a ThinkPad running Linux (Ubuntu), which I use when working from my university office, the library, or elsewhere.</p>
+<p>I use two machines for my research work. One is a relatively powerful desktop computer, a Mac Studio, that I mainly use at home. It is the most powerful (and expensive) machine I have ever owned. The other is a lightweight laptop, a ThinkPad running Linux (Debian13), which I use when working from my university office, the library, or elsewhere.</p>
 <p>Whenever I worked on my laptop, the same questions kept coming back to me: how could I best utilize the power of my desktop computer while I was away from home? My laptop has limited storage and computing capacity, while my desktop has abundant resources that often sat idle simply because I was not physically in front of it.</p>
 <p>After some research and trial-and-error, I found a solution that works well for me: using the SSH (Secure Shell) protocol together with the VS Code Remote SSH extension<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Once I establish an SSH connection between my laptop and desktop computer, I can access the desktop computer remotely. This allows me to run commands, execute programs, and manage files on the desktop machine from my laptop, as if I were physically sitting in front of it. For typical coding, data analysis, and job monitoring, I have found the remote setup to feel effectively indistinguishable from working locally<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
 <p>In the next section, I outline the steps I took to set up this workflow. I will not go into exhaustive technical details, but rather describe how I set up SSH and VS Code Remote SSH in practice. But before that, let me walk through the basic idea behind this workflow.</p>
@@ -439,7 +439,7 @@ gtag('config', 'G-Z70HE9F4JL', { 'anonymize_ip': true});
 </section>
 <section id="step-4.3-set-up-tailscale-on-the-client" class="level4">
 <h4 class="anchored" data-anchor-id="step-4.3-set-up-tailscale-on-the-client">Step 4.3 Set up Tailscale on the Client</h4>
-<p>On the client (your laptop), follow similar steps. I am using Ubuntu on my laptop, so I followed <a href="https://tailscale.com/download/linux">the instructions for Linux on Tailscale website</a>. I simply ran the codes illustrated there.</p>
+<p>On the client (your laptop), follow similar steps. I am using Linux on my laptop, so I followed <a href="https://tailscale.com/download/linux">the instructions for Linux on Tailscale website</a>. I simply ran the codes illustrated there.</p>
 <p>Open Tailscale admin console, and verify that both your server and client devices are listed there.</p>
 </section>
 <section id="step-4.4-turn-on-magicdns" class="level4">

@@ -1,0 +1,8 @@
+---
+title: "**Reproducible Research with R and Quarto**"
+description: "A beginner's guide to R programming language"
+date: 2026-01-16
+number-sections: false
+# image: r_image.png
+
+---
