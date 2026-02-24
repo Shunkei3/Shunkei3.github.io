@@ -5,7 +5,6 @@ listing:
   - id: blogposts
     contents: 
       - "ssh-server-setup"
-      - "tmux"
     sort: "date desc"
     type: grid
     categories: false
@@ -18,7 +17,7 @@ listing:
     sort: "date desc"
     type: grid
     categories: false
-    image-height: 150px
+    image-height: 280px
     grid-columns: 2
   # - id: booknotes # not for now
 ---

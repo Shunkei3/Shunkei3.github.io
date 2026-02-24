@@ -148,11 +148,19 @@ gtag('config', 'G-Z70HE9F4JL', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#keywords" id="toc-keywords" class="nav-link active" data-scroll-target="#keywords">Keywords:</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#terminal-multiplexer-tmux" id="toc-terminal-multiplexer-tmux" class="nav-link" data-scroll-target="#terminal-multiplexer-tmux">Terminal Multiplexer: tmux</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -171,7 +179,7 @@ gtag('config', 'G-Z70HE9F4JL', { 'anonymize_ip': true});
 </div>
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta column-page-left">
 
     
   
@@ -183,18 +191,35 @@ gtag('config', 'G-Z70HE9F4JL', { 'anonymize_ip': true});
 </header>
 
 
+<!-- See: -->
+<!-- + [Best Linux Terminal Emulator: 2026 Comparison](https://www.glukhov.org/post/2026/01/terminal-emulators-for-linux-comparison/?utm_source=chatgpt.com) -->
+<!-- + [a comparison of terminal emulators](https://blog.randomstring.org/2025/09/26/a-comparison-of-terminal-emulators/?utm_source=chatgpt.com) -->
+<!--     + On MacOS, wezterm uses about twice as much memory as alacritty. -->
+<section id="keywords" class="level1">
+<h1>Keywords:</h1>
+<ul>
+<li>terminal multiplexer</li>
+<li>a single terminal display (terminal emulator window)</li>
+</ul>
+</section>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>In my previous post, I discussed how to establish ssh connections with remote and local servers. In this pose, I want to introduce another useful tool called tmux. Additionally, I will briefly touch on Alacritty, a modern terminal emulator that complements tmux well.</p>
 <p>This post might be useful for:</p>
 <ul>
-<li><em>Vim users who want a more efficient terminal workflow.</em></li>
 <li><em>Researchers who work across local and remote machines and want consistent terminal sessions.</em></li>
-<li><em>Occasional terminal users who are interested in learning about terminal multiplexers and modern terminal emulators.</em></li>
 <li><em>Data analysts and programmers who run long-running tasks and want to avoid losing work due to disconnections.</em></li>
+<li><em>Occasional terminal users who are interested in learning about terminal multiplexers and modern terminal emulators.</em></li>
 </ul>
-<p>Especially, if you establish ssh with remote and local server, as discussed in my previous post, using a termial multiplexer such as tmux can be a life saver. You can start a tmux session on a remote server, run your commands, and even if your ssh connection drops, your tmux session will continue running in the background. When you reconnect, you can simply reattach to the session and pick up exactlty where you left off. This is particularly beneficial for long-running tasks.</p>
+<p>Especially, if you establish ssh with remote and local server, as discussed in my previous post, using a termial multiplexer such as tmux can be a life saver. You can start a tmux session on a remote server, run your commands, and even if your ssh connection drops, your tmux session will continue running in the background. When you reconnect, you can simply reattach to the session and pick up exactlty where you left off. This is particularly beneficial for long-running tasks. Additionally, tmux allows you to manage multiple different terminal sessions in a single terminal window, and you can easily switch between those sessions from keyboard shortcuts. With tmux, you don’t need to open multiple terminal session dedictated to different tasks and work directories.</p>
+<p>The rest of this post will be organized as follows. First, I will explain what tmux is and its key features. Then, I will provide a step-by-step guide on how to install and set up tmux. Finally, I will briefly introduce Alacritty and its minimal setup.</p>
+</section>
+<section id="terminal-multiplexer-tmux" class="level1">
+<h1>Terminal Multiplexer: tmux</h1>
 <p>Let me step back and explain what tmux and Alacritty are, and why they are useful.</p>
-<p>…</p>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

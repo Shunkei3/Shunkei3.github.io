@@ -7,18 +7,31 @@ image: top_picture.png
 categories: [tmux, terminal, ssh]
 ---
 
+<!-- See: -->
+<!-- + [Best Linux Terminal Emulator: 2026 Comparison](https://www.glukhov.org/post/2026/01/terminal-emulators-for-linux-comparison/?utm_source=chatgpt.com) -->
+
+<!-- + [a comparison of terminal emulators](https://blog.randomstring.org/2025/09/26/a-comparison-of-terminal-emulators/?utm_source=chatgpt.com) -->
+<!--     + On MacOS, wezterm uses about twice as much memory as alacritty. -->
+
+# Keywords:
++ terminal multiplexer
++ a single terminal display (terminal emulator window)
+
+# Introduction
+In my previous post, I discussed how to establish ssh connections with remote and local servers. In this pose, I want to introduce another useful tool called tmux. Additionally, I will briefly touch on Alacritty, a modern terminal emulator that complements tmux well.
 
 This post might be useful for:
 
-+ *Vim users who want a more efficient terminal workflow.*
 + *Researchers who work across local and remote machines and want consistent terminal sessions.*
-+ *Occasional terminal users who are interested in learning about terminal multiplexers and modern terminal emulators.*
 + *Data analysts and programmers who run long-running tasks and want to avoid losing work due to disconnections.*
++ *Occasional terminal users who are interested in learning about terminal multiplexers and modern terminal emulators.*
 
-Especially, if you establish ssh with remote and local server, as discussed in my previous post, using a termial multiplexer such as tmux can be a life saver. You can start a tmux session on a remote server, run your commands, and even if your ssh connection drops, your tmux session will continue running in the background. When you reconnect, you can simply reattach to the session and pick up exactlty where you left off. This is particularly beneficial for long-running tasks.
+Especially, if you establish ssh with remote and local server, as discussed in my previous post, using a termial multiplexer such as tmux can be a life saver. You can start a tmux session on a remote server, run your commands, and even if your ssh connection drops, your tmux session will continue running in the background. When you reconnect, you can simply reattach to the session and pick up exactlty where you left off. This is particularly beneficial for long-running tasks. Additionally, tmux allows you to manage multiple different terminal sessions in a single terminal window, and you can easily switch between those sessions from keyboard shortcuts. With tmux, you don't need to open multiple terminal session dedictated to different tasks and work directories.
+
+The rest of this post will be organized as follows. First, I will explain what tmux is and its key features. Then, I will provide a step-by-step guide on how to install and set up tmux. Finally, I will briefly introduce Alacritty and its minimal setup.
 
 
+# Terminal Multiplexer: tmux
 Let me step back and explain what tmux and Alacritty are, and why they are useful.
 
 
-...

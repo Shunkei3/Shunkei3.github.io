@@ -46,14 +46,14 @@
     "href": "posts/index.html",
     "title": "Posts",
     "section": "",
-    "text": "tmux and Alacritty provide a persistent and reliable terminal workflow for data analysis, both locally and remotely. This post explains what they are and why they are useful.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSSH provides a practical way to access the resources of a powerful desktop workstation from a laptop. This post explains why this works and how to set it up.\n\n\n\n\n\n\nJan 10, 2026\n\n\n\n\n\n\nNo matching items"
+    "text": "SSH provides a practical way to access the resources of a powerful desktop workstation from a laptop. This post explains why this works and how to set it up.\n\n\n\n\n\n\nJan 10, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/index.html#memorandums",
     "href": "posts/index.html#memorandums",
     "title": "Posts",
     "section": "",
-    "text": "tmux and Alacritty provide a persistent and reliable terminal workflow for data analysis, both locally and remotely. This post explains what they are and why they are useful.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSSH provides a practical way to access the resources of a powerful desktop workstation from a laptop. This post explains why this works and how to set it up.\n\n\n\n\n\n\nJan 10, 2026\n\n\n\n\n\n\nNo matching items"
+    "text": "SSH provides a practical way to access the resources of a powerful desktop workstation from a laptop. This post explains why this works and how to set it up.\n\n\n\n\n\n\nJan 10, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/index.html#r-programming-and-quarto",
@@ -193,7 +193,7 @@
     "href": "posts/tmux/index.html",
     "title": "tmux Setup Guide with Alacritty Terminal Emulator (comming soon)",
     "section": "",
-    "text": "This post might be useful for:\n\nVim users who want a more efficient terminal workflow.\nResearchers who work across local and remote machines and want consistent terminal sessions.\nOccasional terminal users who are interested in learning about terminal multiplexers and modern terminal emulators.\nData analysts and programmers who run long-running tasks and want to avoid losing work due to disconnections.\n\nEspecially, if you establish ssh with remote and local server, as discussed in my previous post, using a termial multiplexer such as tmux can be a life saver. You can start a tmux session on a remote server, run your commands, and even if your ssh connection drops, your tmux session will continue running in the background. When you reconnect, you can simply reattach to the session and pick up exactlty where you left off. This is particularly beneficial for long-running tasks.\nLet me step back and explain what tmux and Alacritty are, and why they are useful.\n…\n\n\n\n Back to top"
+    "text": "Keywords:\n\nterminal multiplexer\na single terminal display (terminal emulator window)\n\n\n\nIntroduction\nIn my previous post, I discussed how to establish ssh connections with remote and local servers. In this pose, I want to introduce another useful tool called tmux. Additionally, I will briefly touch on Alacritty, a modern terminal emulator that complements tmux well.\nThis post might be useful for:\n\nResearchers who work across local and remote machines and want consistent terminal sessions.\nData analysts and programmers who run long-running tasks and want to avoid losing work due to disconnections.\nOccasional terminal users who are interested in learning about terminal multiplexers and modern terminal emulators.\n\nEspecially, if you establish ssh with remote and local server, as discussed in my previous post, using a termial multiplexer such as tmux can be a life saver. You can start a tmux session on a remote server, run your commands, and even if your ssh connection drops, your tmux session will continue running in the background. When you reconnect, you can simply reattach to the session and pick up exactlty where you left off. This is particularly beneficial for long-running tasks. Additionally, tmux allows you to manage multiple different terminal sessions in a single terminal window, and you can easily switch between those sessions from keyboard shortcuts. With tmux, you don’t need to open multiple terminal session dedictated to different tasks and work directories.\nThe rest of this post will be organized as follows. First, I will explain what tmux is and its key features. Then, I will provide a step-by-step guide on how to install and set up tmux. Finally, I will briefly introduce Alacritty and its minimal setup.\n\n\nTerminal Multiplexer: tmux\nLet me step back and explain what tmux and Alacritty are, and why they are useful.\n\n\n\n\n Back to top"
   },
   {
     "objectID": "index.html",
