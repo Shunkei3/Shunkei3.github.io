@@ -30,18 +30,20 @@ toc-depth: 4
 
 These challenges are unlikely to be unique to me. As working with large datasets and computationally intensive tasks has become a standard part of academic research, many researchers face similar constraints in their day-to-day workflows.
 
-The solution I eventually settled on is based on SSH (Secure Shell). **It is not a new idea in computing circles, but it seems like it is under-documented, under-taught, and under-utilized in the research community**. When I first saw the term "SSH", it sounded like a tool for software developers and system administrators, but not for academic researchers. However, after exploring its capabilities, I realized that SSH can be a powerful tool for researchers who work on intensive computational tasks and large datasets as well. Also I believe that the opportunity cost of the time required to learn and set up SSH is small relative to the potential benefits it can bring to your workflow. 
+The solution I eventually settled on is based on SSH (Secure Shell). Although SSH is widely used in computing, it appears to be less familiar among academic researchers. At first, I assumed it was mainly a tool for software developers and system administrators. After learning more about it, however, I realized that SSH could help me overcome the computational and data-management challenges I had been facing.
+
+<!-- Also I believe that the opportunity cost of the time required to learn and set up SSH is small relative to the potential benefits it can bring to your workflow.  -->
 
 Being able to seamlessly access and utilize resources of a more powerful machine can be beneficial. My hope is to be helpful to those who might be facing similar challenges in their workflow by sharing my experience. 
 
 
 ## Background of My Situation
 
-I use two machines for my research work. One is a relatively powerful desktop computer, a Mac Studio, that I mainly use at home. It is the most powerful (and expensive) machine I have ever owned. The other is a lightweight laptop, a ThinkPad running Linux (Debian13), which I use when working from my university office, the library, or elsewhere.
+I use two computers for my research. One is a relatively powerful desktop computer—a Mac Studio—that I primarily use at home. It is the most powerful, and most expensive, computer I have ever owned. The other is a lightweight ThinkPad laptop running Debian 13, which I use for working on the go.
 
 Whenever I worked on my laptop, the same questions kept coming back to me: how could I best utilize the power of my desktop computer while I was away from home? My laptop has limited storage and computing capacity, while my desktop has abundant resources that often sat idle simply because I was not physically in front of it.
 
-After some research and trial-and-error, I found a solution that works well for me: using the SSH (Secure Shell) protocol together with the VS Code Remote SSH extension^[SSH is a cryptographic network protocol that allows a user to securely access and control a remote computer over a network]. Once I establish an SSH connection between my laptop and desktop computer, I can access the desktop computer remotely. This allows me to run commands, execute programs, and manage files on the desktop machine from my laptop, as if I were physically sitting in front of it. For typical coding, data analysis, and job monitoring, I have found the remote setup to feel effectively indistinguishable from working locally^[For highly interactive or graphics-heavy tasks, it may behave differently].
+After some research and trial-and-error, I found a solution that works well for me: using the SSH (Secure Shell) protocol together with the VS Code Remote SSH extension^[SSH is a cryptographic network protocol that allows a user to securely access and control a remote computer over a network]. Once I establish an SSH connection between my laptop and desktop computer, I can access the desktop computer remotely. This allows me to run commands, execute programs, and manage files on the desktop machine from my laptop, as if I were physically sitting in front of it. For typical coding, data analysis, and job monitoring, I have found the remote setup to feel effectively indistinguishable from working locally^[For example, even when I connected to my home desktop computer in the United States from Japan, I did not notice any significant lag or loss of responsiveness.].
 
 In the next section, I outline the steps I took to set up this workflow. I will not go into exhaustive technical details, but rather describe how I set up SSH and VS Code Remote SSH in practice. But before that, let me walk through the basic idea behind this workflow.
 

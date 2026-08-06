@@ -1,6 +1,10 @@
 project:
   type: website
   output-dir: docs
+  render: 
+    - "**/*.qmd"
+    - "**/*.md"
+    - "!z_others/"
 
 resources:
   - robots.txt

@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://shunkei3.github.io/z_others/Ideas/Econ_Reproducibility.html</loc>
-    <lastmod>2026-02-04T02:06:30.555Z</lastmod>
+    <loc>https://shunkei3.github.io/teaching.html</loc>
+    <lastmod>2026-08-06T19:39:54.773Z</lastmod>
   </url>
   <url>
-    <loc>https://shunkei3.github.io/z_others/vim_settings.html</loc>
-    <lastmod>2026-01-21T04:23:22.950Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shunkei3.github.io/CV.html</loc>
-    <lastmod>2025-08-06T06:41:02.000Z</lastmod>
+    <loc>https://shunkei3.github.io/posts/tmux/index.html</loc>
+    <lastmod>2026-02-13T17:17:15.089Z</lastmod>
   </url>
   <url>
     <loc>https://shunkei3.github.io/posts/reproducible-research/index.html</loc>
@@ -21,35 +17,23 @@
     <lastmod>2026-02-24T02:08:23.486Z</lastmod>
   </url>
   <url>
-    <loc>https://shunkei3.github.io/posts/ssh-server-setup/index.html</loc>
-    <lastmod>2026-02-10T23:35:04.477Z</lastmod>
+    <loc>https://shunkei3.github.io/CV.html</loc>
+    <lastmod>2025-08-06T06:41:02.000Z</lastmod>
   </url>
   <url>
-    <loc>https://shunkei3.github.io/teaching.html</loc>
-    <lastmod>2026-01-18T20:30:50.522Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shunkei3.github.io/research.html</loc>
-    <lastmod>2026-01-19T00:07:27.088Z</lastmod>
+    <loc>https://shunkei3.github.io/index.html</loc>
+    <lastmod>2026-08-06T14:47:33.441Z</lastmod>
   </url>
   <url>
     <loc>https://shunkei3.github.io/posts/r-intro/index.html</loc>
     <lastmod>2026-01-18T22:50:08.689Z</lastmod>
   </url>
   <url>
-    <loc>https://shunkei3.github.io/posts/tmux/index.html</loc>
-    <lastmod>2026-02-13T17:17:15.089Z</lastmod>
+    <loc>https://shunkei3.github.io/posts/ssh-server-setup/index.html</loc>
+    <lastmod>2026-08-06T19:54:54.525Z</lastmod>
   </url>
   <url>
-    <loc>https://shunkei3.github.io/index.html</loc>
-    <lastmod>2026-01-19T17:03:32.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shunkei3.github.io/z_others/ToDo.html</loc>
-    <lastmod>2026-01-16T18:52:02.528Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shunkei3.github.io/z_others/post_tmux/index.html</loc>
-    <lastmod>2026-01-22T18:04:46.000Z</lastmod>
+    <loc>https://shunkei3.github.io/research.html</loc>
+    <lastmod>2026-08-06T19:26:08.877Z</lastmod>
   </url>
 </urlset>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,6 +11,9 @@
 
 <title>Using SSH to Access the Power of a Desktop Workstation from a Laptop – Shunkei Kakimoto</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -74,10 +77,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-ea91fe063b863f2cf89356ebd31493bb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-9ad7a8bdf42748043ca588a04554bf35.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -291,12 +294,13 @@ gtag('config', 'G-Z70HE9F4JL', { 'anonymize_ip': true});
 <li><p><strong><em>“Is there a way to avoid constantly worrying about the storage and performance limits of my laptop?”</em></strong></p></li>
 </ul>
 <p>These challenges are unlikely to be unique to me. As working with large datasets and computationally intensive tasks has become a standard part of academic research, many researchers face similar constraints in their day-to-day workflows.</p>
-<p>The solution I eventually settled on is based on SSH (Secure Shell). <strong>It is not a new idea in computing circles, but it seems like it is under-documented, under-taught, and under-utilized in the research community</strong>. When I first saw the term “SSH”, it sounded like a tool for software developers and system administrators, but not for academic researchers. However, after exploring its capabilities, I realized that SSH can be a powerful tool for researchers who work on intensive computational tasks and large datasets as well. Also I believe that the opportunity cost of the time required to learn and set up SSH is small relative to the potential benefits it can bring to your workflow.</p>
+<p>The solution I eventually settled on is based on SSH (Secure Shell). Although SSH is widely used in computing, it appears to be less familiar among academic researchers. At first, I assumed it was mainly a tool for software developers and system administrators. After learning more about it, however, I realized that SSH could help me overcome the computational and data-management challenges I had been facing.</p>
+<!-- Also I believe that the opportunity cost of the time required to learn and set up SSH is small relative to the potential benefits it can bring to your workflow.  -->
 <p>Being able to seamlessly access and utilize resources of a more powerful machine can be beneficial. My hope is to be helpful to those who might be facing similar challenges in their workflow by sharing my experience.</p>
 </section>
 <section id="background-of-my-situation" class="level2">
 <h2 class="anchored" data-anchor-id="background-of-my-situation">Background of My Situation</h2>
-<p>I use two machines for my research work. One is a relatively powerful desktop computer, a Mac Studio, that I mainly use at home. It is the most powerful (and expensive) machine I have ever owned. The other is a lightweight laptop, a ThinkPad running Linux (Debian13), which I use when working from my university office, the library, or elsewhere.</p>
+<p>I use two computers for my research. One is a relatively powerful desktop computer—a Mac Studio—that I primarily use at home. It is the most powerful, and most expensive, computer I have ever owned. The other is a lightweight ThinkPad laptop running Debian 13, which I use for working on the go.</p>
 <p>Whenever I worked on my laptop, the same questions kept coming back to me: how could I best utilize the power of my desktop computer while I was away from home? My laptop has limited storage and computing capacity, while my desktop has abundant resources that often sat idle simply because I was not physically in front of it.</p>
 <p>After some research and trial-and-error, I found a solution that works well for me: using the SSH (Secure Shell) protocol together with the VS Code Remote SSH extension<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Once I establish an SSH connection between my laptop and desktop computer, I can access the desktop computer remotely. This allows me to run commands, execute programs, and manage files on the desktop machine from my laptop, as if I were physically sitting in front of it. For typical coding, data analysis, and job monitoring, I have found the remote setup to feel effectively indistinguishable from working locally<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
 <p>In the next section, I outline the steps I took to set up this workflow. I will not go into exhaustive technical details, but rather describe how I set up SSH and VS Code Remote SSH in practice. But before that, let me walk through the basic idea behind this workflow.</p>
@@ -349,8 +353,8 @@ gtag('config', 'G-Z70HE9F4JL', { 'anonymize_ip': true});
 <section id="step-1.3-finding-username-hostname" class="level4">
 <h4 class="anchored" data-anchor-id="step-1.3-finding-username-hostname">Step 1.3 Finding Username &amp; Hostname</h4>
 <p>Open Terminal on your Mac, and run</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>whoami # to get your username</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>hostname # to get your hostname (i.e., server name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>whoami # to get your username</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>hostname # to get your hostname (i.e., server name)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><code>&lt;username@hostname&gt;</code> will be your SSH address to connect to this Mac from your laptop.　For example, if <code>whoami</code> returns <code>jo</code>, and <code>hostname</code> returns <code>jos-Mac-Studio.local</code>, then your SSH address</p>
 <p><br></p>
 </section>
@@ -361,20 +365,20 @@ gtag('config', 'G-Z70HE9F4JL', { 'anonymize_ip': true});
 <section id="step-2.1-generate-an-ssh-key" class="level4">
 <h4 class="anchored" data-anchor-id="step-2.1-generate-an-ssh-key">Step 2.1 Generate an SSH Key</h4>
 <p>Open Terminal on your laptop, and run the following command</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ssh-keygen -t ed25519</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ssh-keygen -t ed25519</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Press Enter to accept the default file location. What this does is to generate a pair of cryptographic keys (public and private keys) using the <a href="https://en.wikipedia.org/wiki/EdDSA">ed25519 algorithm</a> for SSH authentication in your <code>~/.ssh</code> directory on your laptop.</p>
 </section>
 <section id="step-2.2-copy-the-public-key-to-the-server" class="level4">
 <h4 class="anchored" data-anchor-id="step-2.2-copy-the-public-key-to-the-server">Step 2.2 Copy the Public Key to the Server</h4>
 <p>Next, copy the public key to the server (in my case, the Mac Studio). A copy of the public key of your laptop needs to be transferred to the server using the SSH address you found in Step 1.3.</p>
 <p>Run the following command in your <strong>laptop</strong> terminal:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ssh-copy-id &lt;username@hostname&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ssh-copy-id &lt;username@hostname&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Please replace <code>&lt;username@hostname&gt;</code> with your actual SSH address of the server.</p>
 </section>
 <section id="step-2.3-test-ssh-connection" class="level4">
 <h4 class="anchored" data-anchor-id="step-2.3-test-ssh-connection">Step 2.3 Test SSH Connection</h4>
 <p>Now, test the plain SSH connection on your laptop terminal:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ssh &lt;username@hostname&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ssh &lt;username@hostname&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>If you successfully connect to the server, you should see a terminal prompt of the remote machine. You can type <code>exit</code> to disconnect from the server and return to your laptop terminal.</p>
 <p><br></p>
 </section>
@@ -450,21 +454,21 @@ gtag('config', 'G-Z70HE9F4JL', { 'anonymize_ip': true});
 <section id="step-4.5-test-ssh-connection-over-tailscale" class="level4">
 <h4 class="anchored" data-anchor-id="step-4.5-test-ssh-connection-over-tailscale">Step 4.5 Test SSH Connection over Tailscale</h4>
 <p>Now, you can test SSH connection over Tailscale. Suppose that my username on the server is “shunkei”, and my server device name is “mac”, then I can connect to the server from my laptop terminal with the following command:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ssh shunkei@mac</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ssh shunkei@mac</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="step-4.6-shortcut-for-connecting-to-the-remote-server" class="level4">
 <h4 class="anchored" data-anchor-id="step-4.6-shortcut-for-connecting-to-the-remote-server">Step 4.6 Shortcut for Connecting to the Remote Server</h4>
 <p>It’s cumbersome to type <code>ssh shunkei@mac</code> command every time I want to connect to the remote server through Terminal. You can set your SSH config file to create a shortcut. Open your laptop terminal, and edit the <code>~/.ssh/config</code> file (create it if it does not exist). You can open it with <code>nano</code> editor with <code>nano ~/.ssh/config</code> command (or <code>code ~/.ssh/config</code> if you want to use VS Code). Then, add the following lines:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>Host <span class="dt">&lt;</span><span class="kw">server-name</span><span class="dt">&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>Host <span class="dt">&lt;</span><span class="kw">server-name</span><span class="dt">&gt;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  HostName <span class="dt">&lt;</span><span class="kw">HostName</span><span class="dt">&gt;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  User <span class="dt">&lt;</span><span class="kw">username</span><span class="dt">&gt;</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  IdentitiesOnly yes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  IdentitiesOnly yes</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You need to replace <code>&lt;server-name&gt;</code>, <code>&lt;HostName&gt;</code>, and <code>&lt;username&gt;</code> with your actual values. <code>&lt;server-name&gt;</code> is a user-defined alias for the server, and what you will type after <code>ssh</code> command. <code>&lt;HostName&gt;</code> is the machine name you set in Tailscale (e.g., <code>mac-studio</code> in my case). <code>&lt;username&gt;</code> is your username on the server (the output of <code>whoami</code> command on the server machine).</p>
 <p>For example, if <code>~/.ssh/config</code> file contains the following lines:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Host server</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Host server</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  HostName mac</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  User shunkei</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  IdentitiesOnly yes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  IdentitiesOnly yes</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Then you can simply run <code>ssh server</code> on Terminal to connect to the remote server.</p>
 <p>Congratulations! You have successfully set up SSH access to your remote server over Tailscale. You can now work on your remote server from anywhere, without being bothered by the limitations of your laptop.</p>
 <p><br></p>
@@ -477,12 +481,12 @@ gtag('config', 'G-Z70HE9F4JL', { 'anonymize_ip': true});
 <section id="opening-a-specific-project-directory-on-the-remote-server-from-the-laptop-terminal" class="level3">
 <h3 class="anchored" data-anchor-id="opening-a-specific-project-directory-on-the-remote-server-from-the-laptop-terminal">Opening a Specific Project Directory on the Remote Server from the Laptop Terminal</h3>
 <p>If you are the <code>code</code> command user to open VS Code from Terminal, like,</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>code ~/Projects/MyResearchProject</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>code ~/Projects/MyResearchProject</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>you can also open a specific project directory on the remote server directly from your laptop terminal.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>code --remote ssh-remote+&lt;username@hostname&gt; /Users/username/Projects/MyResearchProject</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>code --remote ssh-remote+&lt;username@hostname&gt; /Users/username/Projects/MyResearchProject</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You need to replace <code>&lt;username@hostname&gt;</code> with your actual SSH username and server address. If you have set up Tailscale and SSH config file as described above, you can use the shortcut name you defined in the SSH config file. Note that you don’t need to run <code>ssh &lt;username@hostname&gt;</code> command before <code>code</code> command.</p>
 <p>For example, if you defined <code>server</code> as the shortcut name, then you can run:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>code --remote ssh-remote+server /Users/username/Projects/MyResearchProject</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>code --remote ssh-remote+server /Users/username/Projects/MyResearchProject</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You should see that VS Code opens the specified project directory on the remote server.</p>
 <p><br></p>
 </section>
@@ -512,7 +516,7 @@ If you want to enhance the security of your SSH setup, tailscale is a good optio
 
 <ol>
 <li id="fn1"><p>SSH is a cryptographic network protocol that allows a user to securely access and control a remote computer over a network<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>For highly interactive or graphics-heavy tasks, it may behave differently<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>For example, even when I connected to my home desktop computer in the United States from Japan, I did not notice any significant lag or loss of responsiveness.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p><strong>At this point, you may wonder whether this is similar to controlling the remote machine’s screen. It is not.</strong> This setup is different from traditional remote desktop tools that “mirror” the screen of another computer. Here, you are not streaming the entire graphical interface; instead, you are securely connecting to the remote machine and working directly with files and commands there. That is why this approach often feels fast and responsive for coding and data analysis.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>At a high level, SSH allows one computer to open a secure command-line session on another computer over a network. Once this connection is established, commands typed on the laptop are executed on the desktop computer, and the results are sent back to the laptop. From the user’s perspective, it feels similar to working directly on the desktop machine, except that everything happens through a network connection.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
@@ -568,13 +572,14 @@ If you want to enhance the security of your SSH setup, tailscale is a good optio
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
