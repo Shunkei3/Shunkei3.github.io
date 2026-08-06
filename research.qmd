@@ -30,19 +30,19 @@ execute:
 # {{< fa folder-open >}} Current Research Projects
 
 ::: {.research-item}
-**Heterogeneous Dynamic Water-Use Responses to Irrigation Technology Adoption**
+"**Heterogeneous Dynamic Water-Use Responses to Irrigation Technology Adoption**"
 
 [Shunkei Kakimoto]{.research-meta}
 :::
 
 ::: {.research-item}
-**Groundwater Quality Implications of Wellhead Protection Areas: Evidence from Nebraska**
+"**Groundwater Quality Implications of Wellhead Protection Areas: Evidence from Nebraska**"
 
 [Deshamithra Jayasekera, Taro Mieno, and Shunkei Kakimoto]{.research-meta}
 :::
 
 ::: {.research-item}
-**Yield Response to Nitrogen in Agricultural Production Models**
+"**Yield Response to Nitrogen in Agricultural Production Models**"
 
 [Nicholas Gallagher and Shunkei Kakimoto]{.research-meta}
 :::
@@ -118,7 +118,7 @@ Department of Agricultural Economics, University of Nebraska–Lincoln, April 1,
 # {{< fa microphone >}} Selected Presentations
 
 ::: {.research-item}
-**Cost-effectiveness of a pay-for-performance cover-crop program: A case study of the Olmsted County Groundwater Protection and Soil Health Protection Program in Minnesota**
+"Cost-effectiveness of a pay-for-performance cover-crop program: A case study of the Olmsted County Groundwater Protection and Soil Health Protection Program in Minnesota"
 
 [Minnesota Water Resources Conference, St. Paul, Minnesota, 2026]{.research-meta}
 :::
@@ -126,7 +126,7 @@ Department of Agricultural Economics, University of Nebraska–Lincoln, April 1,
 
 
 ::: {.research-item}
-**Heterogeneous Dynamic Water-Use Responses to Irrigation Technology Adoption**
+"Heterogeneous Dynamic Water-Use Responses to Irrigation Technology Adoption"
 
 [AAEA Annual Meeting, Kansas City, Missouri, 2026]{.research-meta}
 :::
@@ -134,20 +134,20 @@ Department of Agricultural Economics, University of Nebraska–Lincoln, April 1,
 
 
 ::: {.research-item}
-**Size and the Nature of Measurement Error in Gridded Weather Datasets and Its Consequential Estimation Bias in Regression Models: An Application to PRISM Data for the U.S. Midwest**
+"Size and the Nature of Measurement Error in Gridded Weather Datasets and Its Consequential Estimation Bias in Regression Models: An Application to PRISM Data for the U.S. Midwest"
 
 [AAEA Annual Meeting, Denver, Colorado, 2025]{.research-meta}
 [AERE Summer Conference, Santa Ana Pueblo, New Mexico, 2025]{.research-meta}
 :::
 
 ::: {.research-item}
-**Yield Response to Nitrogen in Agricultural Production Models**
+"Yield Response to Nitrogen in Agricultural Production Models"
 
 [AAEA Annual Meeting, Denver, Colorado, 2025]{.research-meta}
 :::
 
 ::: {.research-item}
-**Machine Learning Methods for Site-Specific Input Management**
+"Machine Learning Methods for Site-Specific Input Management"
 
 [Conference on Farmer-Centric On-Farm Experimentation, 2021]{.research-meta}
 :::
