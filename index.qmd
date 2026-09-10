@@ -79,8 +79,6 @@ print_list <-
 
 # About Me
 
-<!-- I am a PhD student in Applied Economics at the University of Minnesota. My research lies at the intersection of environmental and resource economics and agricultural production economics, with a focus on agricultural water resource management and conservation technology adoption. I study how adoption choices and policy incentives shape producers' resource management behavior and associated environmental and economic outcomes. Building on established theoretical and empirical frameworks, I use microeconomic theory and econometric methods to analyze producer behavior under resource constraints, environmental uncertainty, and policy interventions. -->
-
 I am a PhD student in Applied Economics at the University of Minnesota. My research is in environmental and resource economics, with a focus on water and nutrient management in agricultural production. I use microeconomic theory and econometric methods to study how farmers respond to resource constraints, new technologies, and environmental policies. More broadly, my work examines how agriculture can remain productive and resilient while reducing pressure on water resources and the environment. By evaluating the economic and environmental effects of management practices and the policies that shape their adoption, I aim to produce evidence that informs farm-level decision-making and environmental policy design.
 
 <br>
