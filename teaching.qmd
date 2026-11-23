@@ -29,7 +29,7 @@ toc-depth: 2
 ::: {.teaching-item}
 **Applied R Programming Review Course**
 
-[University of Minnesota · Ph.D. students · Summer 2024]{.teaching-meta}
+[University of Minnesota · Ph.D.-level · Summer 2024]{.teaching-meta}
 
 Designed and taught a review course in R programming and data analysis for Ph.D. students in Applied Economics and the Humphrey School of Public Affairs.
 
