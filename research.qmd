@@ -50,7 +50,7 @@ execute:
 :::
 
 ::: {.research-item}
-"**Yield Response to Nitrogen in Agricultural Production Models**"
+"**Yield Response to Nitrogen in Agricultural Production Models** (submitted)"
 
 [Nicholas Gallagher and Shunkei Kakimoto]{.research-meta}
 :::
