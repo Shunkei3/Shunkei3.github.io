@@ -18,28 +18,70 @@
     "href": "posts/reproducible-research/index.html",
     "title": "Reproducible Research with R and Quarto",
     "section": "",
-    "text": "Back to top"
+    "text": "I developed this two-part workshop for the APEC Student Seminar Series at the University of Minnesota. It introduces practical ways to make research projects easier to understand, reproduce, and build on. The sessions combine core principles with hands-on examples using R, Quarto, and Stata."
+  },
+  {
+    "objectID": "posts/reproducible-research/index.html#about-the-workshop",
+    "href": "posts/reproducible-research/index.html#about-the-workshop",
+    "title": "Reproducible Research with R and Quarto",
+    "section": "",
+    "text": "I developed this two-part workshop for the APEC Student Seminar Series at the University of Minnesota. It introduces practical ways to make research projects easier to understand, reproduce, and build on. The sessions combine core principles with hands-on examples using R, Quarto, and Stata."
+  },
+  {
+    "objectID": "posts/reproducible-research/index.html#workshop-materials",
+    "href": "posts/reproducible-research/index.html#workshop-materials",
+    "title": "Reproducible Research with R and Quarto",
+    "section": "Workshop materials",
+    "text": "Workshop materials\nThe workshop repository contains the slides and related materials.\n\nPart 1 slides: Introduction to Reproducibility in Scientific Research\nPart 2 slides: How to Prepare a Reproducible Research Package\nExample reproducible project with R\nExample reproducible project with Stata\nConfiguring VS Code for R"
+  },
+  {
+    "objectID": "posts/reproducible-research/index.html#what-the-sessions-cover",
+    "href": "posts/reproducible-research/index.html#what-the-sessions-cover",
+    "title": "Reproducible Research with R and Quarto",
+    "section": "What the sessions cover",
+    "text": "What the sessions cover\n\nPart 1: Foundations\nThe first session introduces reproducibility in scientific research and reviews practices for organizing project files, automating workflows, documenting data and code, and sharing research materials. It also uses an example R project to show how these practices work together.\n\n\nPart 2: Applying the practices\nThe second session uses hands-on exercises to examine an example Stata project and replication packages from economics. It also covers preparing replication materials, reference management, and writing a manuscript with Quarto."
+  },
+  {
+    "objectID": "posts/reproducible-research/index.html#learning-goals",
+    "href": "posts/reproducible-research/index.html#learning-goals",
+    "title": "Reproducible Research with R and Quarto",
+    "section": "Learning goals",
+    "text": "Learning goals\nBy completing the workshop, participants should be able to:\n\nExplain core practices for reproducible research.\nIdentify tools and resources that support reproducibility.\nApply practices for data management, code organization, and project documentation."
+  },
+  {
+    "objectID": "posts/reproducible-research/index.html#preparing-for-the-workshop",
+    "href": "posts/reproducible-research/index.html#preparing-for-the-workshop",
+    "title": "Reproducible Research with R and Quarto",
+    "section": "Preparing for the workshop",
+    "text": "Preparing for the workshop\nFor the hands-on exercises, bring a laptop with R and RStudio installed. The workshop also uses the Quarto CLI and Zotero Desktop with its browser connector.\n\nInstall R and RStudio\nInstall Quarto\nDownload Zotero and the browser connector"
+  },
+  {
+    "objectID": "posts/reproducible-research/index.html#further-reading",
+    "href": "posts/reproducible-research/index.html#further-reading",
+    "title": "Reproducible Research with R and Quarto",
+    "section": "Further reading",
+    "text": "Further reading\n\nReproducible Research Guide — UC Davis Library\nAmerican Economic Review Data and Code Availability Policy\nAEA Data Editor guidance: Preparing your files for verification"
   },
   {
     "objectID": "posts/index.html",
     "href": "posts/index.html",
     "title": "Posts",
     "section": "",
-    "text": "SSH provides a practical way to access the resources of a powerful desktop workstation from a laptop. This post explains why this works and how to set it up.\n\n\n\n\n\n\nJan 10, 2026\n\n\n\n\n\n\nNo matching items"
+    "text": "SSH provides a practical way to access the resources of a powerful desktop workstation from a laptop. This post explains why this works and how to set it up.\n\n\n\nShunkei Kakimoto\n\n\nJan 10, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/index.html#memorandums",
     "href": "posts/index.html#memorandums",
     "title": "Posts",
     "section": "",
-    "text": "SSH provides a practical way to access the resources of a powerful desktop workstation from a laptop. This post explains why this works and how to set it up.\n\n\n\n\n\n\nJan 10, 2026\n\n\n\n\n\n\nNo matching items"
+    "text": "SSH provides a practical way to access the resources of a powerful desktop workstation from a laptop. This post explains why this works and how to set it up.\n\n\n\nShunkei Kakimoto\n\n\nJan 10, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/index.html#r-programming-and-quarto",
     "href": "posts/index.html#r-programming-and-quarto",
     "title": "Posts",
     "section": "R programming and Quarto",
-    "text": "R programming and Quarto\nR (and Quarto) is my primary tools for my academic research. I use R for:\n\ndata wrangling, statistical analysis and visualization, and goespatial analysis.\nintegrating Python script and functions within R script using the reticulate package for specific tasks\nwriting reproducible research documents such as academic papers, reports, and presentation slides in combination with Quarto and some VS code extensions (e.g., citation picker for Zotero).\n\nHere, I share my experience of learning R and some useful resources that helped me along the way.\n\n\n\n\n\n\n\n\n\n\nMini Course: Introduction to R Programming\n\n\nA beginner’s guide to R programming language\n\n\n\n\n\n\nJan 16, 2026\n\n\n\n\n\n\n\n\n\n\n\nReproducible Research with R and Quarto\n\n\nA beginner’s guide to R programming language\n\n\n\n\n\n\nJan 16, 2026\n\n\n\n\n\n\nNo matching items"
+    "text": "R programming and Quarto\nR (and Quarto) is my primary tools for my academic research. I use R for:\n\ndata wrangling, statistical analysis and visualization, and goespatial analysis.\nintegrating Python script and functions within R script using the reticulate package for specific tasks\nwriting reproducible research documents such as academic papers, reports, and presentation slides in combination with Quarto and some VS code extensions (e.g., citation picker for Zotero).\n\nHere, I share my experience of learning R and some useful resources that helped me along the way.\n\n\n\n\n\n\n\n\n\n\nReproducible Research with R and Quarto\n\n\nWorkshop materials and practical guidance for reproducible research.\n\n\n\nShunkei Kakimoto\n\n\nApr 10, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nMini Course: Introduction to R Programming\n\n\nA beginner’s guide to R programming language\n\n\n\nShunkei Kakimoto\n\n\nJan 16, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/index.html#book-notes",
@@ -144,6 +186,6 @@
     "href": "research.html",
     "title": " Current Research Projects",
     "section": "",
-    "text": "Current Research Projects\n\n“Designing Irrigation Upgrade Subsidies for Groundwater Conservation”\nShunkei Kakimoto\n\n\n“Heterogeneous Dynamic Water-Use Responses to Irrigation Technology Adoption”\nShunkei Kakimoto\n\n\n“Groundwater Quality Implications of Wellhead Protection Areas: Evidence from Nebraska”\nDeshamithra Jayasekera, Taro Mieno, and Shunkei Kakimoto\n\n\n“Yield Response to Nitrogen in Agricultural Production Models”\nNicholas Gallagher and Shunkei Kakimoto\n\n\n\n\n\n Peer-Reviewed Publications\nMieno, T., T. Foster, S. Kakimoto, and N. Brozović (2024). “Aquifer depletion exacerbates agricultural drought losses in the US High Plains”. In: Nature Water 2.1. Publisher: Nature Publishing Group, pp. 41-51. ISSN: 2731-6084. DOI: 10.1038/s44221-023-00173-7.\nKakimoto, S., T. Mieno, T. S. Tanaka, and D. S. Bullock (2022). “Causal forest approach for site-specific input management via on-farm precision experimentation”. In: Computers and Electronics in Agriculture 199, p. 107164. ISSN: 01681699. DOI: 10.1016/j.compag.2022.107164.\n\n\n\n Outreach and Extension Publications\n\nD. Jayasekera, T. Mieno, and S. Kakimoto. 2026.\n“The Effectiveness of Wellhead Protection Areas on Groundwater Quality: Evidence from Nebraska.” Department of Agricultural Economics, University of Nebraska–Lincoln, April 1, 2026.\n\n\n\n\n Selected Presentations\n\n“Cost-effectiveness of a pay-for-performance cover-crop program: A case study of the Olmsted County Groundwater Protection and Soil Health Protection Program in Minnesota”\nMinnesota Water Resources Conference, St. Paul, Minnesota, 2026\n\n\n“Heterogeneous Dynamic Water-Use Responses to Irrigation Technology Adoption”\nAAEA Annual Meeting, Kansas City, Missouri, 2026\n\n\n“Size and the Nature of Measurement Error in Gridded Weather Datasets and Its Consequential Estimation Bias in Regression Models: An Application to PRISM Data for the U.S. Midwest”\nAAEA Annual Meeting, Denver, Colorado, 2025 AERE Summer Conference, Santa Ana Pueblo, New Mexico, 2025\n\n\n“Yield Response to Nitrogen in Agricultural Production Models”\nAAEA Annual Meeting, Denver, Colorado, 2025\n\n\n“Machine Learning Methods for Site-Specific Input Management”\nConference on Farmer-Centric On-Farm Experimentation, 2021\n\n\n\n\n Workshops\n\nReproducibility Practice in Economics\nApplied Economics Student Workshop Series at the University of Minnesota, April 2026\n\nThe workshop materials are available  here.\n\n\n\nIntroduction to Making Presentation Slides with xaringan\nApplied Economics Student Workshop Series, University of Minnesota, April 30, 2024\n\n\n\n\n\n Back to top"
+    "text": "Current Research Projects\n\n“Designing Irrigation Upgrade Subsidies for Groundwater Conservation”\nShunkei Kakimoto\n\n\n“Heterogeneous Dynamic Water-Use Responses to Irrigation Technology Adoption”\nShunkei Kakimoto\n\n\n“Groundwater Quality Implications of Wellhead Protection Areas: Evidence from Nebraska”\nDeshamithra Jayasekera, Taro Mieno, and Shunkei Kakimoto\n\n\n“Yield Response to Nitrogen in Agricultural Production Models (submitted)”\nNicholas Gallagher and Shunkei Kakimoto\n\n\n\n\n\n Peer-Reviewed Publications\nMieno, T., T. Foster, S. Kakimoto, and N. Brozović (2024). “Aquifer depletion exacerbates agricultural drought losses in the US High Plains”. In: Nature Water 2.1. Publisher: Nature Publishing Group, pp. 41-51. ISSN: 2731-6084. DOI: 10.1038/s44221-023-00173-7.\nKakimoto, S., T. Mieno, T. S. Tanaka, and D. S. Bullock (2022). “Causal forest approach for site-specific input management via on-farm precision experimentation”. In: Computers and Electronics in Agriculture 199, p. 107164. ISSN: 01681699. DOI: 10.1016/j.compag.2022.107164.\n\n\n\n Outreach and Extension Publications\n\nD. Jayasekera, T. Mieno, and S. Kakimoto. 2026.\n“The Effectiveness of Wellhead Protection Areas on Groundwater Quality: Evidence from Nebraska.” Department of Agricultural Economics, University of Nebraska–Lincoln, April 1, 2026.\n\n\n\n\n Selected Presentations\n\n“Cost-effectiveness of a pay-for-performance cover-crop program: A case study of the Olmsted County Groundwater Protection and Soil Health Protection Program in Minnesota”\nMinnesota Water Resources Conference, St. Paul, Minnesota, 2026\n\n\n“Heterogeneous Dynamic Water-Use Responses to Irrigation Technology Adoption”\nAAEA Annual Meeting, Kansas City, Missouri, 2026\n\n\n“Size and the Nature of Measurement Error in Gridded Weather Datasets and Its Consequential Estimation Bias in Regression Models: An Application to PRISM Data for the U.S. Midwest”\nAAEA Annual Meeting, Denver, Colorado, 2025 AERE Summer Conference, Santa Ana Pueblo, New Mexico, 2025\n\n\n“Yield Response to Nitrogen in Agricultural Production Models”\nAAEA Annual Meeting, Denver, Colorado, 2025\n\n\n“Machine Learning Methods for Site-Specific Input Management”\nConference on Farmer-Centric On-Farm Experimentation, 2021\n\n\n\n\n Workshops\n\nReproducibility Practice in Economics\nApplied Economics Student Workshop Series at the University of Minnesota, April 2026\n\nThe workshop materials are available  here.\n\n\n\nIntroduction to Making Presentation Slides with xaringan\nApplied Economics Student Workshop Series, University of Minnesota, April 30, 2024\n\n\n\n\n\n Back to top"
   }
 ]

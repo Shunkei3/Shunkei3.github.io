@@ -3,8 +3,8 @@
     "listing": "/posts/index.html",
     "items": [
       "/posts/ssh-server-setup/index.html",
-      "/posts/r-intro/index.html",
-      "/posts/reproducible-research/index.html"
+      "/posts/reproducible-research/index.html",
+      "/posts/r-intro/index.html"
     ]
   }
 ]

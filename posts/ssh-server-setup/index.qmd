@@ -2,8 +2,8 @@
 title: "**Using SSH to Access the Power of a Desktop Workstation from a Laptop**"
 description: "SSH provides a practical way to access the resources of a powerful desktop workstation from a laptop. This post explains why this works and how to set it up."
 date: 2026-01-10
+author: "Shunkei Kakimoto"
 number-sections: false
-# image: architecture-ssh.png
 image: ssh_image1.png
 categories: [ssh, vscode, remote-development, terminal]
 toc-depth: 4

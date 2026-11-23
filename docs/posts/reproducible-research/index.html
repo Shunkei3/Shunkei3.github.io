@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-01-16">
-<meta name="description" content="A beginner’s guide to R programming language">
+<meta name="author" content="Shunkei Kakimoto">
+<meta name="dcterms.date" content="2026-04-10">
+<meta name="description" content="Workshop materials and practical guidance for reproducible research.">
 
 <title>Reproducible Research with R and Quarto – Shunkei Kakimoto</title>
 <style>
@@ -85,8 +86,11 @@ gtag('config', 'G-Z70HE9F4JL', { 'anonymize_ip': true});
 
 
 <meta property="og:title" content="Reproducible Research with R and Quarto – Shunkei Kakimoto">
-<meta property="og:description" content="A beginner’s guide to R programming language">
+<meta property="og:description" content="Workshop materials and practical guidance for reproducible research.">
+<meta property="og:image" content="https://shunkei3.github.io/posts/reproducible-research/page_image.png">
 <meta property="og:site_name" content="Shunkei Kakimoto">
+<meta property="og:image:height" content="1024">
+<meta property="og:image:width" content="1536">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -149,31 +153,52 @@ gtag('config', 'G-Z70HE9F4JL', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#about-the-workshop" id="toc-about-the-workshop" class="nav-link active" data-scroll-target="#about-the-workshop">About the workshop</a></li>
+  <li><a href="#workshop-materials" id="toc-workshop-materials" class="nav-link" data-scroll-target="#workshop-materials">Workshop materials</a></li>
+  <li><a href="#what-the-sessions-cover" id="toc-what-the-sessions-cover" class="nav-link" data-scroll-target="#what-the-sessions-cover">What the sessions cover</a>
+  <ul class="collapse">
+  <li><a href="#part-1-foundations" id="toc-part-1-foundations" class="nav-link" data-scroll-target="#part-1-foundations">Part 1: Foundations</a></li>
+  <li><a href="#part-2-applying-the-practices" id="toc-part-2-applying-the-practices" class="nav-link" data-scroll-target="#part-2-applying-the-practices">Part 2: Applying the practices</a></li>
+  </ul></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning goals</a></li>
+  <li><a href="#preparing-for-the-workshop" id="toc-preparing-for-the-workshop" class="nav-link" data-scroll-target="#preparing-for-the-workshop">Preparing for the workshop</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><strong>Reproducible Research with R and Quarto</strong></h1>
+<h1 class="title">Reproducible Research with R and Quarto</h1>
 </div>
 
 <div>
   <div class="description">
-    A beginner’s guide to R programming language
+    Workshop materials and practical guidance for reproducible research.
   </div>
 </div>
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta column-page-left">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Shunkei Kakimoto </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 16, 2026</p>
+      <p class="date">April 10, 2026</p>
     </div>
   </div>
   
@@ -185,8 +210,60 @@ gtag('config', 'G-Z70HE9F4JL', { 'anonymize_ip': true});
 </header>
 
 
+<section id="about-the-workshop" class="level2">
+<h2 class="anchored" data-anchor-id="about-the-workshop">About the workshop</h2>
+<p>I developed this two-part workshop for the APEC Student Seminar Series at the University of Minnesota. It introduces practical ways to make research projects easier to understand, reproduce, and build on. The sessions combine core principles with hands-on examples using R, Quarto, and Stata.</p>
+</section>
+<section id="workshop-materials" class="level2">
+<h2 class="anchored" data-anchor-id="workshop-materials">Workshop materials</h2>
+<p>The <a href="https://github.com/Shunkei3/Reproducibility-Workshop">workshop repository</a> contains the slides and related materials.</p>
+<ul>
+<li><a href="https://shunkei3.github.io/Reproducibility-Workshop/contents/Day1/day1-slides.html">Part 1 slides: Introduction to Reproducibility in Scientific Research</a></li>
+<li><a href="https://shunkei3.github.io/Reproducibility-Workshop/contents/Day2/day2-slides.html">Part 2 slides: How to Prepare a Reproducible Research Package</a></li>
+<li><a href="https://github.com/Shunkei3/Sample-Reproducible-Project">Example reproducible project with R</a></li>
+<li><a href="https://github.com/Shunkei3/Sample-Reproducible-Project-stata">Example reproducible project with Stata</a></li>
+<li><a href="https://shunkei3.github.io/Reproducibility-Workshop/how-to-radian-standalone.html">Configuring VS Code for R</a></li>
+</ul>
+</section>
+<section id="what-the-sessions-cover" class="level2">
+<h2 class="anchored" data-anchor-id="what-the-sessions-cover">What the sessions cover</h2>
+<section id="part-1-foundations" class="level3">
+<h3 class="anchored" data-anchor-id="part-1-foundations">Part 1: Foundations</h3>
+<p>The first session introduces reproducibility in scientific research and reviews practices for organizing project files, automating workflows, documenting data and code, and sharing research materials. It also uses an example R project to show how these practices work together.</p>
+</section>
+<section id="part-2-applying-the-practices" class="level3">
+<h3 class="anchored" data-anchor-id="part-2-applying-the-practices">Part 2: Applying the practices</h3>
+<p>The second session uses hands-on exercises to examine an example Stata project and replication packages from economics. It also covers preparing replication materials, reference management, and writing a manuscript with Quarto.</p>
+</section>
+</section>
+<section id="learning-goals" class="level2">
+<h2 class="anchored" data-anchor-id="learning-goals">Learning goals</h2>
+<p>By completing the workshop, participants should be able to:</p>
+<ul>
+<li>Explain core practices for reproducible research.</li>
+<li>Identify tools and resources that support reproducibility.</li>
+<li>Apply practices for data management, code organization, and project documentation.</li>
+</ul>
+</section>
+<section id="preparing-for-the-workshop" class="level2">
+<h2 class="anchored" data-anchor-id="preparing-for-the-workshop">Preparing for the workshop</h2>
+<p>For the hands-on exercises, bring a laptop with R and RStudio installed. The workshop also uses the Quarto CLI and Zotero Desktop with its browser connector.</p>
+<ul>
+<li><a href="https://posit.co/download/rstudio-desktop/">Install R and RStudio</a></li>
+<li><a href="https://quarto.org/docs/get-started/">Install Quarto</a></li>
+<li><a href="https://www.zotero.org/download/">Download Zotero and the browser connector</a></li>
+</ul>
+</section>
+<section id="further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="further-reading">Further reading</h2>
+<ul>
+<li><a href="https://ucdavisdatalab.github.io/guide_reproducible_research/chapters/01_principles.html">Reproducible Research Guide — UC Davis Library</a></li>
+<li><a href="https://www.aeaweb.org/journals/data/data-code-policy">American Economic Review Data and Code Availability Policy</a></li>
+<li><a href="https://aeadataeditor.github.io/aea-de-guidance/preparing-for-data-deposit">AEA Data Editor guidance: Preparing your files for verification</a></li>
+</ul>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

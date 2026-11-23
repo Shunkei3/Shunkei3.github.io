@@ -1,8 +1,54 @@
 ---
-title: "**Reproducible Research with R and Quarto**"
-description: "A beginner's guide to R programming language"
-date: 2026-01-16
+title: "Reproducible Research with R and Quarto"
+author: "Shunkei Kakimoto"
+description: "Workshop materials and practical guidance for reproducible research."
+date: 2026-04-10
+image: page_image.png
 number-sections: false
-# image: r_image.png
-
 ---
+
+## About the workshop
+
+I developed this two-part workshop for the APEC Student Seminar Series at the University of Minnesota. It introduces practical ways to make research projects easier to understand, reproduce, and build on. The sessions combine core principles with hands-on examples using R, Quarto, and Stata.
+
+## Workshop materials
+
+The [workshop repository](https://github.com/Shunkei3/Reproducibility-Workshop) contains the slides and related materials.
+
+- [Part 1 slides: Introduction to Reproducibility in Scientific Research](https://shunkei3.github.io/Reproducibility-Workshop/contents/Day1/day1-slides.html)
+- [Part 2 slides: How to Prepare a Reproducible Research Package](https://shunkei3.github.io/Reproducibility-Workshop/contents/Day2/day2-slides.html)
+- [Example reproducible project with R](https://github.com/Shunkei3/Sample-Reproducible-Project)
+- [Example reproducible project with Stata](https://github.com/Shunkei3/Sample-Reproducible-Project-stata)
+- [Configuring VS Code for R](https://shunkei3.github.io/Reproducibility-Workshop/how-to-radian-standalone.html)
+
+## What the sessions cover
+
+### Part 1: Foundations
+
+The first session introduces reproducibility in scientific research and reviews practices for organizing project files, automating workflows, documenting data and code, and sharing research materials. It also uses an example R project to show how these practices work together.
+
+### Part 2: Applying the practices
+
+The second session uses hands-on exercises to examine an example Stata project and replication packages from economics. It also covers preparing replication materials, reference management, and writing a manuscript with Quarto.
+
+## Learning goals
+
+By completing the workshop, participants should be able to:
+
+- Explain core practices for reproducible research.
+- Identify tools and resources that support reproducibility.
+- Apply practices for data management, code organization, and project documentation.
+
+## Preparing for the workshop
+
+For the hands-on exercises, bring a laptop with R and RStudio installed. The workshop also uses the Quarto CLI and Zotero Desktop with its browser connector.
+
+- [Install R and RStudio](https://posit.co/download/rstudio-desktop/)
+- [Install Quarto](https://quarto.org/docs/get-started/)
+- [Download Zotero and the browser connector](https://www.zotero.org/download/)
+
+## Further reading
+
+- [Reproducible Research Guide — UC Davis Library](https://ucdavisdatalab.github.io/guide_reproducible_research/chapters/01_principles.html)
+- [American Economic Review Data and Code Availability Policy](https://www.aeaweb.org/journals/data/data-code-policy)
+- [AEA Data Editor guidance: Preparing your files for verification](https://aeadataeditor.github.io/aea-de-guidance/preparing-for-data-deposit)

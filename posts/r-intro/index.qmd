@@ -1,5 +1,6 @@
 ---
 title: "**Mini Course: Introduction to R Programming**"
+author: "Shunkei Kakimoto"
 description: "A beginner's guide to R programming language"
 date: 2026-01-16
 number-sections: false
