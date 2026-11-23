@@ -42,7 +42,7 @@ Designed and taught a review course in R programming and data analysis for Ph.D.
 
 As a teaching assistant, I led weekly discussion sessions, developed supplemental materials, graded assignments, held office hours, and provided individualized feedback to students.
 
-**University of Minnesota**
+<!-- **University of Minnesota**
 
 - **Principles of Microeconomics** (APEC 1101) — Undergraduate, Fall 2024
 - **Applied Microeconomic Analysis of Social Choice and Welfare** (APEC 8004) — Ph.D., Spring 2024
@@ -52,7 +52,18 @@ As a teaching assistant, I led weekly discussion sessions, developed supplementa
 
 **University of Nebraska–Lincoln**
 
-- **Applied Econometrics** (AECN 896-003) — M.S., Fall 2020 and Spring 2022
+- **Applied Econometrics** (AECN 896-003) — M.S., Fall 2020 and Spring 2022 -->
+
+| University | Course | Instructor | Level | Semester |
+|:-------|:---------|:-------|:------|:---------|
+| University of Minnesota | Principles of Microeconomics (APEC 1101) | Tade Okediji | Undergraduate | Fall 2024 |
+| University of Minnesota | Applied Microeconomic Analysis of Social Choice and Welfare (APEC 8004) | Jay Coggins | Ph.D. | Spring 2024 |
+| University of Minnesota | Applied Microeconomic Analysis of Game Theory and Information (APEC 8003) | Stephen Polasky | Ph.D. | Spring 2024 |
+| University of Minnesota | Econometric Analysis I & II (APEC 8211 & 8212) | Joe Ritter | Ph.D. | Fall 2023 |
+| University of Nebraska–Lincoln | Applied Econometrics (AECN 896-003) | Taro Mieno | M.S. | Fall 2020 and Spring 2022 |
+
+
+
 
 <br>
 
@@ -69,7 +80,7 @@ Recognized for teaching **APEC 1101: Principles of Microeconomics**.
 ::: {.teaching-item}
 **AAEA TLC Graduate Student Teaching Award Nominee, 2024**
 
-[Nominated by Professor Frances Homans, University of Minnesota]{.teaching-meta}
+[Nominated by Prof. Frances Homans, University of Minnesota]{.teaching-meta}
 
 Nominated for teaching **APEC 8211–8212: Econometric Analysis I and II**.
 :::
@@ -79,10 +90,10 @@ Nominated for teaching **APEC 8211–8212: Econometric Analysis I and II**.
 
 [Department of Applied Economics, University of Minnesota]{.teaching-meta}
 
-Recognized for teaching **APEC 8211–8212: Econometric Analysis I and II** and **APEC 8003–8004: Applied Microeconomic Analysis**.
 :::
 
 <br>
+
 
 # {{< fa lightbulb >}} Teaching Philosophy
 
