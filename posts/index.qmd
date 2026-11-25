@@ -46,10 +46,16 @@ R and Quarto are my primary tools for academic research. I use them for:
 <br>
 
 ## Book Notes
-::: {layout-ncol=2}
-![](book/AgEnvResEcon.png)
-<!-- 
-![](book/commodity.png){height=1in} -->
+
+<!-- The most influential books I have read are listed below, which really helped shape my understanding and approach in agricultural and environmental policy analysis. -->
+
+
+::: {layout-ncol=3}
+![](book/AgEnvResEcon.png){height=1in}
+
+![](book/commodity.png){height=1in}
+
+![](book/baumol.png){height=1in}
 :::
 
 
